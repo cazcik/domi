@@ -1,0 +1,29 @@
+name: deploy api
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - packages/api/**
+      - .github/workflows/api.yaml
+
+  workflow_dispatch:
+    inputs:
+      description:
+        description: y tho?
+        required: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Deploy worker
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          workingDirectory: packages/api
+          packageManager: pnpm
