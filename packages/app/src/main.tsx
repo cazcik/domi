@@ -1,14 +1,21 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import { PHProvider } from "./components/providers";
-import PostHogPageView from "./components/pageview";
+import Root from "./routes/root";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Root />,
+  },
+]);
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <PHProvider>
-      <div id="root-component"></div>
-      <PostHogPageView />
+      <RouterProvider router={router} />
     </PHProvider>
   </StrictMode>
 );
