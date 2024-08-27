@@ -3,7 +3,7 @@ import { PostHogProvider } from "posthog-js/react";
 
 if (typeof window !== "undefined") {
   posthog.init("phc_1Ogcp16thrs0Rff8hcueMLAjSF3paFAbrX0cAmotrsu", {
-    api_host: "https://us.i.posthog.com",
+    api_host: "https://circles.usedomi.com",
     person_profiles: "identified_only",
     capture_pageview: false,
   });
