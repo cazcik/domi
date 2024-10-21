@@ -36,15 +36,17 @@ export default function RootLayout({
       lang="en"
       className={`${source.variable} scroll-smooth bg-amber-50/10 text-black antialiased`}
     >
-      <head>
-        <script
-          defer
-          data-domain="usedomi.com"
-          data-api="https://circles.usedomi.com/api/event"
-          src="https://circles.usedomi.com/js/script.js"
-        ></script>
-      </head>
-      <body>{children}</body>
+      <body>
+        {children}
+        {process.env.NODE_ENV === "production" ? (
+          <script
+            defer
+            data-domain="usedomi.com"
+            data-api="https://circles.usedomi.com/api/event"
+            src="https://circles.usedomi.com/js/script.js"
+          ></script>
+        ) : null}
+      </body>
     </html>
   );
 }
