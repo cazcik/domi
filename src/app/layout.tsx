@@ -3,19 +3,19 @@ import localFont from "next/font/local";
 
 import "./globals.css";
 
-const source = localFont({
+const inter = localFont({
   src: [
     {
-      path: "source-sans-3vf-upright.woff2",
+      path: "inter-var-roman.woff2",
       style: "normal",
     },
     {
-      path: "source-sans-3vf-italic.woff2",
+      path: "inter-var-italic.woff2",
       style: "italic",
     },
   ],
   display: "swap",
-  variable: "--font-source",
+  variable: "--font-inter",
 });
 
 export const metadata: Metadata = {
@@ -34,7 +34,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${source.variable} scroll-smooth bg-amber-50/10 text-black antialiased`}
+      className={`${inter.variable} scroll-smooth bg-amber-50/60 text-black antialiased`}
     >
       <body>
         {children}
