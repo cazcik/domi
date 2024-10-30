@@ -10,12 +10,5 @@ minify = true
 # hosts the static frontend files
 assets = { directory = ".worker-next/assets", binding = "ASSETS" }
 
-# setup variables
-vars = { ENVIORNMENT = "development" }
-
 # custom domain config
-routes = [{ pattern = "dev.usedomi.com", custom_domain = true }]
-
-[env.production]
-vars = { ENVIORNMENT = "production" }
 routes = [{ pattern = "usedomi.com", custom_domain = true }]
