@@ -6,11 +6,11 @@ import "./globals.css";
 const inter = localFont({
   src: [
     {
-      path: "inter-var-roman.woff2",
+      path: "fonts/inter-var-roman.woff2",
       style: "normal",
     },
     {
-      path: "inter-var-italic.woff2",
+      path: "fonts/inter-var-italic.woff2",
       style: "italic",
     },
   ],
