@@ -1,4 +1,8 @@
 import type { Metadata } from "next";
+import { redirect } from "next/navigation";
+
+import { auth } from "@/app/auth";
+import ProductPage from "./(marketing)/product/page";
 
 export const metadata: Metadata = {
   title: {
@@ -6,17 +10,12 @@ export const metadata: Metadata = {
   },
 };
 
-export default function IndexPage() {
-  return (
-    <div className="flex min-h-dvh flex-col">
-      <div className="m-auto w-full max-w-xl">
-        <div className="flex flex-col px-6">
-          <h1 className="text-xl font-bold text-black lg:text-2xl">domi.</h1>
-          <p className="text-lg text-neutral-500 lg:mt-1 lg:text-xl">
-            the friendly way to homeschool.
-          </p>
-        </div>
-      </div>
-    </div>
-  );
+export default async function IndexPage() {
+  const session = await auth();
+
+  if (session && session.user) {
+    redirect("/home");
+  } else {
+    return <ProductPage />;
+  }
 }
