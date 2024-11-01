@@ -11,7 +11,9 @@ export default async function SignInPage() {
     <div className="flex min-h-dvh flex-col">
       <div className="m-auto w-full max-w-xl">
         <div className="flex flex-col px-6">
-          <h1 className="text-xl font-bold text-black lg:text-2xl">sign in.</h1>
+          <h1 className="text-xl font-medium text-black lg:text-2xl">
+            sign in.
+          </h1>
           <form
             action={async () => {
               "use server";

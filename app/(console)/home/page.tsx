@@ -38,8 +38,8 @@ export default async function ConsolePage() {
         </div>
         <div className="m-auto w-full max-w-xl">
           <div className="flex flex-col px-6">
-            <h1 className="text-xl font-bold text-black lg:text-2xl">
-              hi {session.user.name?.toLowerCase() || "person"}.
+            <h1 className="text-xl font-medium text-black lg:text-2xl">
+              hi, {session.user.name?.toLowerCase().split(" ")[0] || "person"}.
             </h1>
             <p className="text-lg text-neutral-500 lg:mt-1 lg:text-xl">
               {session.user.id || "00000000-0000-0000-0000-000000000000"}
