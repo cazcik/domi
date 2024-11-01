@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: "sign in",
 };
 
-export default async function SignInPage() {
+export default function SignInPage() {
   return (
     <div className="flex min-h-dvh flex-col">
       <div className="m-auto w-full max-w-xl">

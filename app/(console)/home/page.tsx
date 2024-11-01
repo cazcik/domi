@@ -1,8 +1,8 @@
+import Link from "next/link";
 import type { Metadata } from "next";
 import { redirect } from "next/navigation";
 
 import { auth, signOut } from "@/app/auth";
-import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "home",
