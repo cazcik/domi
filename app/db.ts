@@ -1,11 +1,11 @@
 import { drizzle } from "drizzle-orm/neon-http";
 import {
-  boolean,
   timestamp,
   pgTable,
   text,
   primaryKey,
   integer,
+  pgEnum,
 } from "drizzle-orm/pg-core";
 import type { AdapterAccountType } from "next-auth/adapters";
 
@@ -14,11 +14,15 @@ export const db = drizzle(process.env.DATABASE_URL!);
 export const users = pgTable("user", {
   id: text("id")
     .primaryKey()
-    .$defaultFn(() => crypto.randomUUID()),
+    .$defaultFn(() => crypto.randomUUID())
+    .notNull(),
   name: text("name"),
   email: text("email").unique(),
   emailVerified: timestamp("emailVerified", { mode: "date" }),
   image: text("image"),
+  createdAt: timestamp("createdAt", { mode: "date" }).defaultNow(),
+  updatedAt: timestamp("updatedAt", { mode: "date" }).defaultNow(),
+  deletedAt: timestamp("deletedAt", { mode: "date" }),
 });
 
 export const accounts = pgTable(
@@ -53,16 +57,19 @@ export const sessions = pgTable("session", {
   expires: timestamp("expires", { mode: "date" }).notNull(),
 });
 
-export const verificationTokens = pgTable(
-  "verificationToken",
-  {
-    identifier: text("identifier").notNull(),
-    token: text("token").notNull(),
-    expires: timestamp("expires", { mode: "date" }).notNull(),
-  },
-  (verificationToken) => ({
-    compositePk: primaryKey({
-      columns: [verificationToken.identifier, verificationToken.token],
-    }),
-  }),
-);
+export const genderEnum = pgEnum("gender", ["male", "female"]);
+
+export const students = pgTable("student", {
+  id: text("id")
+    .primaryKey()
+    .$defaultFn(() => crypto.randomUUID()),
+  userId: text("userId")
+    .notNull()
+    .references(() => users.id, { onDelete: "cascade" }),
+  name: text("name"),
+  birthday: timestamp("birthday", { mode: "date" }),
+  gender: genderEnum(),
+  createdAt: timestamp("createdAt", { mode: "date" }).defaultNow(),
+  updatedAt: timestamp("updatedAt", { mode: "date" }).defaultNow(),
+  deletedAt: timestamp("deletedAt", { mode: "date" }),
+});
