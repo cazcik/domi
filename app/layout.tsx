@@ -36,17 +36,7 @@ export default function RootLayout({
       lang="en"
       className={`${inter.variable} scroll-smooth bg-amber-50/60 text-black antialiased`}
     >
-      <body>
-        {children}
-        {process.env.NODE_ENV === "production" ? (
-          <script
-            defer
-            data-domain="usedomi.com"
-            data-api="https://circles.usedomi.com/api/event"
-            src="https://circles.usedomi.com/js/script.js"
-          ></script>
-        ) : null}
-      </body>
+      <body>{children}</body>
     </html>
   );
 }
