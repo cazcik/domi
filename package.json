@@ -1,5 +1,5 @@
 {
-  "name": "cybsc",
+  "name": "domi",
   "private": true,
   "scripts": {
     "dev": "turbo dev",
