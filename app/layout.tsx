@@ -1,6 +1,7 @@
 import { Inter } from "next/font/google";
 import type { Metadata, Viewport } from "next";
 import { Analytics } from "@vercel/analytics/react";
+import { AuthKitProvider } from "@workos-inc/authkit-nextjs/components";
 
 import "./globals.css";
 
@@ -58,7 +59,7 @@ export default function RootLayout({
       className={`${inter.variable} antialiased smooth-scroll bg-white dark:bg-black text-black dark:text-white`}
     >
       <body>
-        {children}
+        <AuthKitProvider>{children}</AuthKitProvider>
         <Analytics />
       </body>
     </html>
