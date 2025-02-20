@@ -1,23 +1,49 @@
-import type { Metadata } from "next";
+import { Inter } from "next/font/google";
+import type { Metadata, Viewport } from "next";
 import { Analytics } from "@vercel/analytics/react";
-import { Geist, Geist_Mono } from "next/font/google";
 
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const inter = Inter({
   subsets: ["latin"],
+  display: "swap",
+  variable: "--font-inter",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+export const viewport: Viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "white" },
+    { media: "(prefers-color-scheme: dark)", color: "black" },
+  ],
+  colorScheme: "dark light",
+};
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://usedomi.com"),
   title: {
     default: "domi",
     template: "%s - domi",
+  },
+  description: "the missing product security toolkit",
+  openGraph: {
+    title: {
+      default: "domi",
+      template: "%s - domi",
+    },
+    description: "the missing product security toolkit",
+    url: "https://usedomi.com",
+    siteName: "domi",
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: {
+      default: "domi",
+      template: "%s - domi",
+    },
+    description: "the missing product security toolkit",
+    creator: "@wiardsdotio",
   },
 };
 
@@ -29,7 +55,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} antialiased smooth-scroll bg-white dark:bg-black text-black dark:text-white`}
+      className={`${inter.variable} antialiased smooth-scroll bg-white dark:bg-black text-black dark:text-white`}
     >
       <body>
         {children}
