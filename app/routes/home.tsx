@@ -11,7 +11,7 @@ export function loader({ context }: Route.LoaderArgs) {
 export default function Home({ loaderData }: Route.ComponentProps) {
   return (
     <div className="flex min-h-dvh">
-      <div className="m-auto">{loaderData.message}</div>
+      <div className="m-auto">domi-{loaderData.message}</div>
     </div>
   );
 }
