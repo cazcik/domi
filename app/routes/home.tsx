@@ -1,7 +1,7 @@
 import type { Route } from "./+types/home";
 
 export function meta({}: Route.MetaArgs) {
-  return [{ title: "domi" }];
+  return [{ title: "introducing domi" }];
 }
 
 export function loader({ context }: Route.LoaderArgs) {
