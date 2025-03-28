@@ -21,7 +21,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
   return (
     <html
       lang="en"
-      className="scroll-smooth bg-white text-black antialiased selection:bg-blue-600 selection:text-white dark:bg-black dark:text-white"
+      className="scroll-smooth bg-slate-50 text-black antialiased dark:bg-slate-900 dark:text-white dark:selection:bg-slate-700 dark:selection:text-slate-100"
     >
       <head>
         <meta charSet="utf-8" />
