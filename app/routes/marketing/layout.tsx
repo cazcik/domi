@@ -103,7 +103,7 @@ export default function MarketingLayout() {
               </Link>
             </div>
             <span className="text-[11px] text-slate-500 lg:text-xs">|</span> */}
-            <div className="flex items-center gap-x-4">
+            <div className="flex items-center gap-x-3 sm:gap-x-4">
               <Link
                 to="#"
                 className="text-[11px] text-slate-500 hover:text-slate-900 lg:text-xs dark:hover:text-slate-100"
