@@ -47,11 +47,11 @@ export default function Home({ loaderData }: Route.ComponentProps) {
             </div>
           </form>
           <div className="mt-2 flex items-center justify-center">
-            <p className="text-sm sm:text-base dark:text-slate-500">
+            <p className="text-sm text-slate-500 sm:text-base">
               Need an account?{" "}
               <Link
                 to="/sign-up"
-                className="dark:text-slate-300 dark:hover:text-slate-100"
+                className="text-slate-700 hover:text-slate-900 dark:text-slate-300 dark:hover:text-slate-100"
               >
                 Sign up
               </Link>
