@@ -17,42 +17,18 @@ export default function MarketingLayout() {
               className="text-slate-500 hover:text-slate-900 md:text-xs lg:text-sm dark:hover:text-slate-100"
             >
               Product
-            </Link>
-            <Link
-              to="#"
-              className="text-slate-500 hover:text-slate-900 md:text-xs lg:text-sm dark:hover:text-slate-100"
-            >
-              Solutions
-            </Link>
-            <Link
-              to="#"
-              className="text-slate-500 hover:text-slate-900 md:text-xs lg:text-sm dark:hover:text-slate-100"
-            >
-              Pricing
-            </Link>
-            <Link
-              to="#"
-              className="text-slate-500 hover:text-slate-900 md:text-xs lg:text-sm dark:hover:text-slate-100"
-            >
-              Resources
-            </Link>
-            <Link
-              to="#"
-              className="text-slate-500 hover:text-slate-900 md:text-xs lg:text-sm dark:hover:text-slate-100"
-            >
-              Company
             </Link> */}
           </nav>
         </div>
         <div className="flex items-center gap-x-7">
           <Link
-            to="#"
+            to="/sign-in"
             className="text-sm text-slate-500 hover:text-slate-900 md:text-xs lg:text-sm dark:hover:text-slate-100"
           >
             Sign in
           </Link>
           <Link
-            to="#"
+            to="/sign-up"
             className="text-sm text-slate-500 hover:text-slate-900 md:text-xs lg:text-sm dark:hover:text-slate-100"
           >
             Sign up
@@ -77,30 +53,6 @@ export default function MarketingLayout() {
               >
                 Product
               </Link>
-              <Link
-                to="#"
-                className="text-[11px] text-slate-500 hover:text-slate-900 lg:text-xs dark:hover:text-slate-100"
-              >
-                Solutions
-              </Link>
-              <Link
-                to="#"
-                className="text-[11px] text-slate-500 hover:text-slate-900 lg:text-xs dark:hover:text-slate-100"
-              >
-                Pricing
-              </Link>
-              <Link
-                to="#"
-                className="text-[11px] text-slate-500 hover:text-slate-900 lg:text-xs dark:hover:text-slate-100"
-              >
-                Resources
-              </Link>
-              <Link
-                to="#"
-                className="text-[11px] text-slate-500 hover:text-slate-900 lg:text-xs dark:hover:text-slate-100"
-              >
-                Company
-              </Link>
             </div>
             <span className="text-[11px] text-slate-500 lg:text-xs">|</span> */}
             <div className="flex items-center gap-x-3 sm:gap-x-4">
@@ -115,18 +67,6 @@ export default function MarketingLayout() {
                 className="text-[11px] text-slate-500 hover:text-slate-900 lg:text-xs dark:hover:text-slate-100"
               >
                 Terms
-              </Link>
-              <Link
-                to="#"
-                className="text-[11px] text-slate-500 hover:text-slate-900 lg:text-xs dark:hover:text-slate-100"
-              >
-                Cookies
-              </Link>
-              <Link
-                to="#"
-                className="text-[11px] text-slate-500 hover:text-slate-900 lg:text-xs dark:hover:text-slate-100"
-              >
-                Security
               </Link>
             </div>
           </div>
