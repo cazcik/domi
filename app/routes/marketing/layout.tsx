@@ -7,12 +7,12 @@ export default function MarketingLayout() {
         <div className="flex items-center gap-x-10">
           <Link
             to="/"
-            className="text-2xl font-bold text-black lg:text-3xl dark:text-white"
+            className="text-2xl font-bold text-slate-900 lg:text-3xl dark:text-slate-100"
           >
-            d.
+            domi.
           </Link>
           <nav className="hidden items-center gap-x-8 md:flex">
-            <Link
+            {/* <Link
               to="#"
               className="text-slate-500 hover:text-slate-900 md:text-xs lg:text-sm dark:hover:text-slate-100"
             >
@@ -41,7 +41,7 @@ export default function MarketingLayout() {
               className="text-slate-500 hover:text-slate-900 md:text-xs lg:text-sm dark:hover:text-slate-100"
             >
               Company
-            </Link>
+            </Link> */}
           </nav>
         </div>
         <div className="flex items-center gap-x-7">
@@ -69,8 +69,8 @@ export default function MarketingLayout() {
               &copy; 2025 Domi LLC
             </p>
           </div>
-          <div className="hidden items-center gap-x-4 md:flex">
-            <div className="flex items-center gap-x-4">
+          <div className="flex items-center gap-x-4">
+            {/* <div className="flex items-center gap-x-4">
               <Link
                 to="#"
                 className="text-[11px] text-slate-500 hover:text-slate-900 lg:text-xs dark:hover:text-slate-100"
@@ -102,7 +102,7 @@ export default function MarketingLayout() {
                 Company
               </Link>
             </div>
-            <span className="text-[11px] text-slate-500 lg:text-xs">|</span>
+            <span className="text-[11px] text-slate-500 lg:text-xs">|</span> */}
             <div className="flex items-center gap-x-4">
               <Link
                 to="#"
@@ -121,6 +121,12 @@ export default function MarketingLayout() {
                 className="text-[11px] text-slate-500 hover:text-slate-900 lg:text-xs dark:hover:text-slate-100"
               >
                 Cookies
+              </Link>
+              <Link
+                to="#"
+                className="text-[11px] text-slate-500 hover:text-slate-900 lg:text-xs dark:hover:text-slate-100"
+              >
+                Security
               </Link>
             </div>
           </div>
