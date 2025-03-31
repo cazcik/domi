@@ -18,6 +18,7 @@ export default [
     route(":workspaceSlug/scans", "routes/console/scans.tsx"),
     route(":workspaceSlug/findings", "routes/console/findings.tsx"),
     route(":workspaceSlug/training", "routes/console/training.tsx"),
+    route(":workspaceSlug/team", "routes/console/team.tsx"),
     route(":workspaceSlug/settings", "routes/console/settings.tsx"),
   ]),
 ] satisfies RouteConfig;

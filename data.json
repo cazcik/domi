@@ -1,0 +1,61 @@
+{
+  "currentUser": {
+    "id": "wehrujkfhjwre",
+    "name": "Zac Wojcik",
+    "email": "zac@wiards.io",
+    "workspaces": [
+      {
+        "id": "iowerhfiorfuior",
+        "slug": "wiards",
+        "name": "Wiards",
+        "role": "admin"
+      },
+      {
+        "id": "cklsdhjcsnlkldf",
+        "slug": "domi",
+        "name": "Domi",
+        "role": "admin"
+      }
+    ]
+  },
+  "workspaces": [
+    {
+      "id": "iowerhfiorfuior",
+      "slug": "wiards",
+      "name": "Wiards",
+      "billingEmail": "billing@wiards.io",
+      "targets": [],
+      "scans": [],
+      "findings": [],
+      "training": [],
+      "team": [],
+      "settings": {
+        "billing": {
+          "plan": "free",
+          "price": "$0",
+          "term": "month",
+          "invoices": []
+        }
+      }
+    },
+    {
+      "id": "jkcfbhskdjfcvbkwhjsv",
+      "slug": "domi",
+      "name": "Domi",
+      "billingEmail": "billing@usedomi.com",
+      "targets": [],
+      "scans": [],
+      "findings": [],
+      "training": [],
+      "team": [],
+      "settings": {
+        "billing": {
+          "plan": "pro",
+          "price": "$99",
+          "term": "month",
+          "invoices": []
+        }
+      }
+    }
+  ]
+}

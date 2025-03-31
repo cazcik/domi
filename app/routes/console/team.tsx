@@ -37,13 +37,13 @@ export function loader({ params }: Route.LoaderArgs) {
 }
 
 export function meta({}: Route.MetaArgs) {
-  return [{ title: "Findings - Domi" }];
+  return [{ title: "Team - Domi" }];
 }
 
-export default function Findings({ loaderData }: Route.ComponentProps) {
+export default function Team({ loaderData }: Route.ComponentProps) {
   return (
     <div>
-      <div className="p-7">Findings</div>
+      <div className="p-7">Team</div>
     </div>
   );
 }

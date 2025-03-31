@@ -2,19 +2,25 @@ import {
   RiBugLine,
   RiCodeLine,
   RiGraduationCapLine,
+  RiGroupLine,
   RiHome2Line,
   RiScanLine,
   RiSettings4Line,
-  RiTerminalWindowLine,
 } from "@remixicon/react";
-import { Link, Outlet } from "react-router";
+import { Link, Outlet, useLocation } from "react-router";
+import { Popover, PopoverButton, PopoverPanel } from "@headlessui/react";
+
 import NavLink from "./components/nav-link";
+import { currentUser } from "../../../data.json";
 
 export default function ConsoleLayout({
   params,
 }: {
   params: { workspaceSlug: string };
 }) {
+  const location = useLocation();
+  const pathnames = location.pathname.split("/").filter((x) => x);
+
   return (
     <div className="flex min-h-dvh flex-col">
       <header className="sticky top-0 z-2 border-b border-neutral-200 bg-neutral-50 px-7 py-4">
@@ -22,18 +28,99 @@ export default function ConsoleLayout({
           <div>
             <span className="text-2xl font-bold text-neutral-900">d</span>
             <span className="text-2xl font-bold text-neutral-900">:</span>
-            <Link
-              to={`/${params.workspaceSlug}`}
-              className="rounded-lg text-2xl font-bold text-neutral-900 hover:underline"
-            >
-              {params.workspaceSlug}
-            </Link>
-            <span className="text-2xl font-bold text-neutral-900">:</span>
+            {pathnames.map((path) => (
+              <Link
+                key={path}
+                to={
+                  path === params.workspaceSlug
+                    ? `/${params.workspaceSlug}`
+                    : `/${params.workspaceSlug}/${path}`
+                }
+                className="group rounded-lg text-2xl font-bold text-neutral-900"
+              >
+                <span className="group-hover:underline">{path}</span>
+                <span className="group-hover:no-underline">:</span>
+              </Link>
+            ))}
           </div>
-          <div>
-            <span className="inline-flex size-8 items-center justify-center rounded-full bg-neutral-500">
-              <span className="text-sm font-medium text-white">ZW</span>
-            </span>
+          <div className="flex items-center gap-x-5 sm:gap-x-6 md:gap-x-7">
+            <div className="hidden items-center gap-x-3 sm:gap-x-4 md:flex md:gap-x-5">
+              <Link
+                to="#"
+                className="text-sm text-neutral-500 hover:text-neutral-900 md:text-xs lg:text-sm"
+              >
+                Help
+              </Link>
+              <Link
+                to="#"
+                className="text-sm text-neutral-500 hover:text-neutral-900 md:text-xs lg:text-sm"
+              >
+                Docs
+              </Link>
+            </div>
+            <Popover className="relative">
+              <PopoverButton
+                as="button"
+                className="inline-flex size-8 items-center justify-center rounded-full bg-neutral-500"
+              >
+                <span className="text-sm font-medium text-white">
+                  {currentUser && currentUser.name
+                    ? currentUser.name
+                        .split(" ")
+                        .map((n) => n[0])
+                        .join("")
+                    : "??"}
+                </span>
+              </PopoverButton>
+              <PopoverPanel className="absolute right-0 mt-1 flex">
+                <div className="w-48 divide-y divide-neutral-200 rounded-lg border border-neutral-200 bg-white shadow-lg">
+                  <div className="flex flex-col rounded-t-lg px-3 py-2">
+                    <span className="text-sm font-medium text-black">
+                      {currentUser.name}
+                    </span>
+                    <span className="text-sm text-neutral-500">
+                      {currentUser.email}
+                    </span>
+                  </div>
+                  <div className="flex flex-col">
+                    <Link
+                      to="#"
+                      className="px-3 py-2 text-sm text-neutral-500 hover:bg-neutral-50 hover:text-neutral-900"
+                    >
+                      Profile
+                    </Link>
+                    <Link
+                      to="#"
+                      className="px-3 py-2 text-sm text-neutral-500 hover:bg-neutral-50 hover:text-neutral-900"
+                    >
+                      Settings
+                    </Link>
+                  </div>
+                  <div className="flex flex-col">
+                    <Link
+                      to="#"
+                      className="px-3 py-2 text-sm text-neutral-500 hover:bg-neutral-50 hover:text-neutral-900"
+                    >
+                      All Workspaces
+                    </Link>
+                    <Link
+                      to="#"
+                      className="px-3 py-2 text-sm text-neutral-500 hover:bg-neutral-50 hover:text-neutral-900"
+                    >
+                      Create Workspace
+                    </Link>
+                  </div>
+                  <div className="flex flex-col">
+                    <Link
+                      to="#"
+                      className="rounded-b-lg px-3 py-2 text-sm text-neutral-500 hover:bg-neutral-50 hover:text-neutral-900"
+                    >
+                      Sign out
+                    </Link>
+                  </div>
+                </div>
+              </PopoverPanel>
+            </Popover>
           </div>
         </div>
       </header>
@@ -69,6 +156,12 @@ export default function ConsoleLayout({
                 <RiGraduationCapLine className="size-4" />
               </div>
               <span>Training</span>
+            </NavLink>
+            <NavLink href={`/${params.workspaceSlug}/team`}>
+              <div>
+                <RiGroupLine className="size-4" />
+              </div>
+              <span>Team</span>
             </NavLink>
             <NavLink href={`/${params.workspaceSlug}/settings`}>
               <div>
