@@ -1,6 +1,8 @@
 import {
   RiBugLine,
+  RiCodeLine,
   RiGraduationCapLine,
+  RiHome2Line,
   RiScanLine,
   RiSettings4Line,
   RiTerminalWindowLine,
@@ -30,7 +32,7 @@ export default function ConsoleLayout({
           </div>
           <div>
             <span className="inline-flex size-8 items-center justify-center rounded-full bg-neutral-500">
-              <span className="text-sm font-medium text-white">TW</span>
+              <span className="text-sm font-medium text-white">ZW</span>
             </span>
           </div>
         </div>
@@ -38,11 +40,17 @@ export default function ConsoleLayout({
       <div className="z-1 flex flex-1 bg-neutral-50">
         <aside className="sticky inset-0 -mt-[65px] hidden h-screen w-full shrink-0 flex-col justify-between border-r border-neutral-200 pt-[65px] md:flex md:max-w-48 lg:max-w-60">
           <nav className="mt-7 ml-5 flex flex-col gap-y-1 lg:ml-7">
-            <NavLink href={`/${params.workspaceSlug}/applications`}>
+            <NavLink href={`/${params.workspaceSlug}/home`}>
               <div>
-                <RiTerminalWindowLine className="size-4" />
+                <RiHome2Line className="size-4" />
               </div>
-              <span>Applications</span>
+              <span>Home</span>
+            </NavLink>
+            <NavLink href={`/${params.workspaceSlug}/targets`}>
+              <div>
+                <RiCodeLine className="size-4" />
+              </div>
+              <span>Targets</span>
             </NavLink>
             <NavLink href={`/${params.workspaceSlug}/scans`}>
               <div>
