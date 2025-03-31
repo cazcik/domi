@@ -21,7 +21,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
   return (
     <html
       lang="en"
-      className="scroll-smooth bg-slate-50 text-black antialiased dark:bg-slate-900 dark:text-white"
+      className="scroll-smooth bg-neutral-50 text-black antialiased"
     >
       <head>
         <meta charSet="utf-8" />
@@ -64,10 +64,10 @@ export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
         <div>
           <div className="mx-auto flex max-w-sm flex-col px-7 sm:max-w-md md:max-w-xl lg:max-w-2xl">
             <div className="flex flex-col items-center justify-center">
-              <h1 className="pb-4 text-center text-3xl font-bold text-slate-900 sm:pb-5 sm:text-4xl md:pb-6 md:text-5xl lg:text-6xl dark:text-slate-100">
+              <h1 className="pb-4 text-center text-3xl font-bold text-neutral-900 sm:pb-5 sm:text-4xl md:pb-6 md:text-5xl lg:text-6xl">
                 {message}
               </h1>
-              <p className="text-center text-sm text-slate-500 sm:text-base md:text-lg lg:text-xl">
+              <p className="text-center text-sm text-neutral-500 sm:text-base md:text-lg lg:text-xl">
                 {details}
               </p>
             </div>

@@ -15,24 +15,24 @@ export default function Home({ loaderData }: Route.ComponentProps) {
       <div>
         <div className="mx-auto flex max-w-sm flex-col px-7 sm:max-w-md md:max-w-xl lg:max-w-2xl">
           <div className="flex flex-col items-center justify-center">
-            <h1 className="pb-4 text-center text-3xl font-bold text-slate-900 sm:pb-5 sm:text-4xl md:pb-6 md:text-5xl lg:text-6xl dark:text-slate-100">
+            <h1 className="pb-4 text-center text-3xl font-bold text-neutral-900 sm:pb-5 sm:text-4xl md:pb-6 md:text-5xl lg:text-6xl">
               Securing your app just got a whole lot easier.
             </h1>
-            <p className="text-center text-sm text-slate-500 sm:text-base md:text-lg lg:text-xl">
-              Meet the plain and simple way to manage your apps and api's
+            <p className="text-center text-sm text-neutral-500 sm:text-base md:text-lg lg:text-xl">
+              Meet the plain and simple way to manage your apps and apis
               security posture; without completely crushing your soul.
             </p>
           </div>
-          <div className="flex items-center justify-center gap-x-6 pt-10 sm:pt-12 md:pt-14 lg:pt-16">
+          <div className="flex items-center justify-center gap-x-6 pt-10 sm:pt-12 md:gap-x-8 md:pt-14 lg:gap-x-10 lg:pt-16">
             <Link
-              to="#"
-              className="rounded-4xl bg-slate-300 px-6 py-2.5 text-sm text-slate-700 hover:bg-slate-400 hover:text-slate-100 sm:text-base md:text-lg lg:text-xl dark:bg-slate-700 dark:text-slate-300 dark:hover:bg-slate-600 dark:hover:text-slate-100"
+              to="/sign-up"
+              className="text-sm text-neutral-600 hover:text-neutral-900 sm:text-base md:text-lg lg:text-xl"
             >
-              Get started
+              Get started &rarr;
             </Link>
             <Link
               to="#"
-              className="text-sm text-slate-600 hover:text-slate-900 sm:text-base md:text-lg lg:text-xl dark:text-slate-100 dark:hover:text-slate-300"
+              className="text-sm text-neutral-600 hover:text-neutral-900 sm:text-base md:text-lg lg:text-xl"
             >
               Watch demo
             </Link>

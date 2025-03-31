@@ -15,19 +15,16 @@ export default function Home({ loaderData }: Route.ComponentProps) {
       <div>
         <div className="mx-auto flex max-w-md flex-col px-7">
           <div className="flex flex-col">
-            <h1 className="pb-1 text-xl font-bold text-slate-900 sm:pb-2 sm:text-2xl md:pb-3 md:text-3xl lg:text-4xl dark:text-slate-100">
+            <h1 className="pb-1 text-xl font-bold text-neutral-900 sm:pb-2 sm:text-2xl md:pb-3 md:text-3xl lg:text-4xl">
               domi.
             </h1>
-            <p className="text-base text-slate-500 md:text-lg lg:text-xl">
+            <p className="text-base text-neutral-500 md:text-lg lg:text-xl">
               Please enter your details to continue.
             </p>
           </div>
           <form className="flex flex-col pt-4 sm:pt-5 md:pt-6 lg:pt-7">
             <div>
-              <label
-                className="ml-1 text-sm text-slate-700 dark:text-slate-300"
-                htmlFor="name"
-              >
+              <label className="ml-1 text-sm text-neutral-700" htmlFor="name">
                 Name
               </label>
               <input
@@ -37,14 +34,11 @@ export default function Home({ loaderData }: Route.ComponentProps) {
                 name="name"
                 autoComplete="name"
                 placeholder="Tim Apple"
-                className="w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-slate-900 outline-none placeholder:text-slate-500 focus:ring focus:ring-slate-400 md:text-lg dark:border-slate-800 dark:bg-slate-950 dark:text-slate-100 dark:placeholder:text-slate-400 dark:focus:ring dark:focus:ring-slate-100"
+                className="w-full rounded-lg border border-neutral-200 bg-white px-3 py-2 text-neutral-900 outline-none placeholder:text-neutral-500 focus:ring focus:ring-neutral-400 md:text-lg lg:text-xl"
               />
             </div>
             <div className="pt-2">
-              <label
-                className="ml-1 text-sm text-slate-700 dark:text-slate-300"
-                htmlFor="email"
-              >
+              <label className="ml-1 text-sm text-neutral-700" htmlFor="email">
                 Email
               </label>
               <input
@@ -54,12 +48,12 @@ export default function Home({ loaderData }: Route.ComponentProps) {
                 name="email"
                 autoComplete="email"
                 placeholder="tim@apple.com"
-                className="w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-slate-900 outline-none placeholder:text-slate-500 focus:ring focus:ring-slate-400 md:text-lg dark:border-slate-800 dark:bg-slate-950 dark:text-slate-100 dark:placeholder:text-slate-400 dark:focus:ring dark:focus:ring-slate-100"
+                className="w-full rounded-lg border border-neutral-200 bg-white px-3 py-2 text-neutral-900 outline-none placeholder:text-neutral-500 focus:ring focus:ring-neutral-400 md:text-lg lg:text-xl"
               />
             </div>
             <div className="pt-2">
               <label
-                className="ml-1 text-sm text-slate-700 dark:text-slate-300"
+                className="ml-1 text-sm text-neutral-700"
                 htmlFor="workspace"
               >
                 Workspace
@@ -70,22 +64,22 @@ export default function Home({ loaderData }: Route.ComponentProps) {
                 type="workspace"
                 name="name"
                 placeholder="Apple"
-                className="w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-slate-900 outline-none placeholder:text-slate-500 focus:ring focus:ring-slate-400 md:text-lg dark:border-slate-800 dark:bg-slate-950 dark:text-slate-100 dark:placeholder:text-slate-400 dark:focus:ring dark:focus:ring-slate-100"
+                className="w-full rounded-lg border border-neutral-200 bg-white px-3 py-2 text-neutral-900 outline-none placeholder:text-neutral-500 focus:ring focus:ring-neutral-400 md:text-lg lg:text-xl"
               />
             </div>
             <div className="pt-4 lg:pt-5">
-              <p className="text-xs text-slate-500 md:text-sm">
-                By clicking, "Sign up" you agree to our{" "}
+              <p className="text-xs text-neutral-500 md:text-sm">
+                By clicking Sign up you agree to our{" "}
                 <Link
                   to="#"
-                  className="text-slate-700 hover:text-slate-900 dark:text-slate-300 dark:hover:text-slate-100"
+                  className="text-neutral-700 hover:text-neutral-900"
                 >
                   Privacy Policy
                 </Link>{" "}
                 and{" "}
                 <Link
                   to="#"
-                  className="text-slate-700 hover:text-slate-900 dark:text-slate-300 dark:hover:text-slate-100"
+                  className="text-neutral-700 hover:text-neutral-900"
                 >
                   Terms of Service
                 </Link>
@@ -95,18 +89,18 @@ export default function Home({ loaderData }: Route.ComponentProps) {
             <div className="pt-3">
               <button
                 type="submit"
-                className="w-full rounded-lg border border-slate-200 bg-slate-500 px-3 py-2 text-slate-100 outline-none placeholder:text-slate-500 hover:bg-slate-400 hover:text-white focus:ring focus:ring-slate-400 md:text-lg lg:text-xl dark:border-slate-800 dark:bg-slate-700 dark:hover:bg-slate-600 dark:focus:ring dark:focus:ring-slate-500"
+                className="w-full rounded-lg border border-neutral-200 bg-neutral-800 px-3 py-2 text-neutral-100 outline-none placeholder:text-neutral-500 hover:bg-neutral-900 hover:text-white focus:ring focus:ring-neutral-400 md:text-lg lg:text-xl"
               >
                 Sign up
               </button>
             </div>
           </form>
           <div className="flex items-center justify-center pt-2 lg:pt-3">
-            <p className="text-sm text-slate-500 sm:text-base">
+            <p className="text-sm text-neutral-500 sm:text-base">
               Already have an account?{" "}
               <Link
                 to="/sign-in"
-                className="text-slate-700 hover:text-slate-900 dark:text-slate-300 dark:hover:text-slate-100"
+                className="text-neutral-700 hover:text-neutral-900"
               >
                 Sign in
               </Link>

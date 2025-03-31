@@ -12,6 +12,8 @@
     "cf-typegen": "wrangler types"
   },
   "dependencies": {
+    "@remixicon/react": "^4.6.0",
+    "clsx": "^2.1.1",
     "isbot": "^5.1.25",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",

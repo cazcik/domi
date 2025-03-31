@@ -15,10 +15,10 @@ export default function Home({ loaderData }: Route.ComponentProps) {
       <div>
         <div className="mx-auto flex max-w-md flex-col px-7">
           <div className="flex flex-col">
-            <h1 className="pb-1 text-xl font-bold text-slate-900 sm:pb-2 sm:text-2xl md:pb-3 md:text-3xl lg:text-4xl dark:text-slate-100">
+            <h1 className="pb-1 text-xl font-bold text-neutral-900 sm:pb-2 sm:text-2xl md:pb-3 md:text-3xl lg:text-4xl">
               domi.
             </h1>
-            <p className="text-base text-slate-500 md:text-lg lg:text-xl">
+            <p className="text-base text-neutral-500 md:text-lg lg:text-xl">
               Please enter your email to continue.
             </p>
           </div>
@@ -34,24 +34,24 @@ export default function Home({ loaderData }: Route.ComponentProps) {
                 name="email"
                 autoComplete="email"
                 placeholder="you@example.com"
-                className="w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-slate-900 outline-none placeholder:text-slate-500 focus:ring focus:ring-slate-400 md:text-lg lg:text-xl dark:border-slate-800 dark:bg-slate-950 dark:text-slate-100 dark:placeholder:text-slate-400 dark:focus:ring dark:focus:ring-slate-100"
+                className="w-full rounded-lg border border-neutral-200 bg-white px-3 py-2 text-neutral-900 outline-none placeholder:text-neutral-500 focus:ring focus:ring-neutral-400 md:text-lg lg:text-xl"
               />
             </div>
             <div className="pt-2">
               <button
                 type="submit"
-                className="w-full rounded-lg border border-slate-200 bg-slate-500 px-3 py-2 text-slate-100 outline-none placeholder:text-slate-500 hover:bg-slate-400 hover:text-white focus:ring focus:ring-slate-400 md:text-lg lg:text-xl dark:border-slate-800 dark:bg-slate-700 dark:hover:bg-slate-600 dark:focus:ring dark:focus:ring-slate-500"
+                className="w-full rounded-lg border border-neutral-200 bg-neutral-800 px-3 py-2 text-neutral-100 outline-none placeholder:text-neutral-500 hover:bg-neutral-900 hover:text-white focus:ring focus:ring-neutral-400 md:text-lg lg:text-xl"
               >
                 Continue
               </button>
             </div>
           </form>
           <div className="mt-2 flex items-center justify-center">
-            <p className="text-sm text-slate-500 sm:text-base">
+            <p className="text-sm text-neutral-500 sm:text-base">
               Need an account?{" "}
               <Link
                 to="/sign-up"
-                className="text-slate-700 hover:text-slate-900 dark:text-slate-300 dark:hover:text-slate-100"
+                className="text-neutral-700 hover:text-neutral-900"
               >
                 Sign up
               </Link>

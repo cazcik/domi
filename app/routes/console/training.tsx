@@ -5,13 +5,13 @@ export function loader({ params }: Route.LoaderArgs) {
 }
 
 export function meta({}: Route.MetaArgs) {
-  return [{ title: "Home - Domi" }];
+  return [{ title: "Training - Domi" }];
 }
 
-export default function Home({ loaderData }: Route.ComponentProps) {
+export default function Training({ loaderData }: Route.ComponentProps) {
   return (
     <div>
-      <div className="p-7">Home</div>
+      <div className="p-7">Training</div>
     </div>
   );
 }
