@@ -34,13 +34,13 @@ export default function Home({ loaderData }: Route.ComponentProps) {
                 name="email"
                 autoComplete="email"
                 placeholder="you@example.com"
-                className="w-full rounded-lg border border-neutral-200 bg-white px-3 py-2 text-neutral-900 outline-none placeholder:text-neutral-500 focus:ring focus:ring-neutral-400 md:text-lg lg:text-xl"
+                className="w-full rounded-lg border border-neutral-200 bg-white px-3 py-2 text-neutral-900 outline-none placeholder:text-neutral-500 focus:ring focus:ring-neutral-400 md:text-lg"
               />
             </div>
             <div className="pt-2">
               <button
                 type="submit"
-                className="w-full rounded-lg border border-neutral-200 bg-neutral-800 px-3 py-2 text-neutral-100 outline-none placeholder:text-neutral-500 hover:bg-neutral-900 hover:text-white focus:ring focus:ring-neutral-400 md:text-lg lg:text-xl"
+                className="w-full rounded-lg border border-neutral-200 bg-neutral-800 px-3 py-2 text-neutral-100 outline-none placeholder:text-neutral-500 hover:bg-neutral-900 hover:text-white focus:ring focus:ring-neutral-400 md:text-lg"
               >
                 Continue
               </button>

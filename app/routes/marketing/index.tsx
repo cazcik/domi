@@ -13,7 +13,7 @@ export default function Home({ loaderData }: Route.ComponentProps) {
   return (
     <div className="m-auto w-full">
       <div>
-        <div className="mx-auto flex max-w-sm flex-col px-7 sm:max-w-md md:max-w-xl lg:max-w-2xl">
+        <div className="mx-auto flex max-w-sm flex-col px-7 sm:max-w-md md:max-w-xl lg:max-w-3xl">
           <div className="flex flex-col items-center justify-center">
             <h1 className="pb-4 text-center text-3xl font-bold text-neutral-900 sm:pb-5 sm:text-4xl md:pb-6 md:text-5xl lg:text-6xl">
               Securing your app just got a whole lot easier.

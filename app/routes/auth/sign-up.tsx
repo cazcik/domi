@@ -34,7 +34,7 @@ export default function Home({ loaderData }: Route.ComponentProps) {
                 name="name"
                 autoComplete="name"
                 placeholder="Tim Apple"
-                className="w-full rounded-lg border border-neutral-200 bg-white px-3 py-2 text-neutral-900 outline-none placeholder:text-neutral-500 focus:ring focus:ring-neutral-400 md:text-lg lg:text-xl"
+                className="w-full rounded-lg border border-neutral-200 bg-white px-3 py-2 text-neutral-900 outline-none placeholder:text-neutral-500 focus:ring focus:ring-neutral-400 md:text-lg"
               />
             </div>
             <div className="pt-2">
@@ -48,7 +48,7 @@ export default function Home({ loaderData }: Route.ComponentProps) {
                 name="email"
                 autoComplete="email"
                 placeholder="tim@apple.com"
-                className="w-full rounded-lg border border-neutral-200 bg-white px-3 py-2 text-neutral-900 outline-none placeholder:text-neutral-500 focus:ring focus:ring-neutral-400 md:text-lg lg:text-xl"
+                className="w-full rounded-lg border border-neutral-200 bg-white px-3 py-2 text-neutral-900 outline-none placeholder:text-neutral-500 focus:ring focus:ring-neutral-400 md:text-lg"
               />
             </div>
             <div className="pt-2">
@@ -64,7 +64,7 @@ export default function Home({ loaderData }: Route.ComponentProps) {
                 type="workspace"
                 name="name"
                 placeholder="Apple"
-                className="w-full rounded-lg border border-neutral-200 bg-white px-3 py-2 text-neutral-900 outline-none placeholder:text-neutral-500 focus:ring focus:ring-neutral-400 md:text-lg lg:text-xl"
+                className="w-full rounded-lg border border-neutral-200 bg-white px-3 py-2 text-neutral-900 outline-none placeholder:text-neutral-500 focus:ring focus:ring-neutral-400 md:text-lg"
               />
             </div>
             <div className="pt-4 lg:pt-5">

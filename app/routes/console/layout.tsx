@@ -95,14 +95,14 @@ export default function ConsoleLayout({
                     >
                       Settings
                     </Link>
-                  </div>
-                  <div className="flex flex-col">
                     <Link
                       to="#"
                       className="px-3 py-2 text-sm text-neutral-500 hover:bg-neutral-50 hover:text-neutral-900"
                     >
-                      All Workspaces
+                      Workspaces
                     </Link>
+                  </div>
+                  <div className="flex flex-col">
                     <Link
                       to="#"
                       className="px-3 py-2 text-sm text-neutral-500 hover:bg-neutral-50 hover:text-neutral-900"
