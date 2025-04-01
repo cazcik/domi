@@ -1,6 +1,6 @@
 import {
   RiBugLine,
-  RiCodeLine,
+  RiCrosshairLine,
   RiGraduationCapLine,
   RiGroupLine,
   RiHome2Line,
@@ -135,7 +135,7 @@ export default function ConsoleLayout({
             </NavLink>
             <NavLink href={`/${params.workspaceSlug}/targets`}>
               <div>
-                <RiCodeLine className="size-4" />
+                <RiCrosshairLine className="size-4" />
               </div>
               <span>Targets</span>
             </NavLink>
@@ -179,7 +179,7 @@ export default function ConsoleLayout({
             </div>
           </footer>
         </aside>
-        <main className="w-full min-w-0">
+        <main className="w-full min-w-0 pb-24">
           <Outlet />
         </main>
       </div>

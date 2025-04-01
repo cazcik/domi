@@ -32,9 +32,29 @@
       "settings": {
         "billing": {
           "plan": "free",
-          "price": "$0",
-          "term": "month",
-          "invoices": []
+          "paymentMethods": [],
+          "invoices": [
+            {
+              "id": "jfhsdjkcnssds",
+              "createdAt": "2025-04-01T12:00:00Z",
+              "amount": 0,
+              "paymentMethod": {
+                "id": null,
+                "brand": null,
+                "last4": null
+              }
+            },
+            {
+              "id": "jklsdhnfcjksnd",
+              "createdAt": "2025-03-01T12:00:00Z",
+              "amount": 0,
+              "paymentMethod": {
+                "id": null,
+                "brand": null,
+                "last4": null
+              }
+            }
+          ]
         }
       }
     },
@@ -51,11 +71,80 @@
       "settings": {
         "billing": {
           "plan": "pro",
-          "price": "$99",
-          "term": "month",
-          "invoices": []
+          "paymentMethods": [
+            {
+              "id": "owfhcvsljkhfvjkjlsn",
+              "brand": "Visa",
+              "last4": "4242",
+              "expMonth": "12/27",
+              "default": true
+            },
+            {
+              "id": "efrjkshkjsdrsk",
+              "brand": "Visa",
+              "last4": "8167",
+              "expMonth": "11/28",
+              "default": false
+            }
+          ],
+          "invoices": [
+            {
+              "id": "sdjhncvksdjcvb",
+              "createdAt": "2025-04-01T12:00:00Z",
+              "amount": 299,
+              "paymentMethod": {
+                "id": "owfhcvsljkhfvjkjlsn",
+                "brand": "Visa",
+                "last4": "4242"
+              }
+            },
+            {
+              "id": "hjkrhfjkrhfkjsf",
+              "createdAt": "2025-03-01T12:00:00Z",
+              "amount": 299,
+              "paymentMethod": {
+                "id": "owfhcvsljkhfvjkjlsn",
+                "brand": "Visa",
+                "last4": "4242"
+              }
+            },
+            {
+              "id": "hjkrhfjkrhfkjsf",
+              "createdAt": "2025-02-01T12:00:00Z",
+              "amount": 299,
+              "paymentMethod": {
+                "id": "owfhcvsljkhfvjkjlsn",
+                "brand": "Visa",
+                "last4": "4242"
+              }
+            },
+            {
+              "id": "hjkrhfjkrhfkjsf",
+              "createdAt": "2025-01-01T12:00:00Z",
+              "amount": 299,
+              "paymentMethod": {
+                "id": "efrjkshkjsdrsk",
+                "brand": "Visa",
+                "last4": "8167"
+              }
+            }
+          ]
         }
       }
+    }
+  ],
+  "plans": [
+    {
+      "name": "Free",
+      "slug": "free",
+      "price": "0",
+      "term": "mo"
+    },
+    {
+      "name": "Pro",
+      "slug": "pro",
+      "price": "299",
+      "term": "mo"
     }
   ]
 }

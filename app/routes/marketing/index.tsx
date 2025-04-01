@@ -5,11 +5,7 @@ export function meta({}: Route.MetaArgs) {
   return [{ title: "Domi: Secure your apps easily." }];
 }
 
-export function loader({ context }: Route.LoaderArgs) {
-  return { message: context.cloudflare.env.ENVIRONMENT };
-}
-
-export default function Home({ loaderData }: Route.ComponentProps) {
+export default function Home() {
   return (
     <div className="m-auto w-full">
       <div>
