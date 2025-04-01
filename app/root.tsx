@@ -5,7 +5,6 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
-  useLoaderData,
 } from "react-router";
 import type { Route } from "./+types/root";
 
@@ -32,13 +31,7 @@ export const links: Route.LinksFunction = () => [
   },
 ];
 
-export function loader({ context }: Route.LoaderArgs) {
-  return { env: context.cloudflare.env.ENVIRONMENT };
-}
-
 export function Layout({ children }: { children: React.ReactNode }) {
-  const { env } = useLoaderData<typeof loader>();
-
   return (
     <html
       lang="en"
@@ -54,7 +47,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         {children}
         <ScrollRestoration />
         <Scripts />
-        <Analytics env={env} />
+        <Analytics />
       </body>
     </html>
   );
@@ -100,29 +93,15 @@ export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
   );
 }
 
-function Analytics({ env }: { env: "development" | "production" }) {
-  console.log(import.meta.env.MODE);
-  if (import.meta.env.MODE === "development") {
-    return null;
-  } else if (env === "production") {
+function Analytics() {
+  if (import.meta.env.MODE === "production") {
     return (
       <script
         defer
-        data-domain="www.usedomi.com"
+        data-domain="usedomi.com"
         data-api="/loops/api/event"
         src="/loops/js/script.js"
       ></script>
     );
-  } else if (env === "development") {
-    return (
-      <script
-        defer
-        data-domain="dev.usedomi.com"
-        data-api="/loops/api/event"
-        src="/loops/js/script.js"
-      ></script>
-    );
-  } else {
-    return;
   }
 }
