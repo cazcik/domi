@@ -41,6 +41,7 @@ export function meta({}: Route.MetaArgs) {
 }
 
 export default function Team({ loaderData }: Route.ComponentProps) {
+  const { team } = loaderData;
   return (
     <div>
       <div className="p-7">
@@ -51,6 +52,32 @@ export default function Team({ loaderData }: Route.ComponentProps) {
           <p className="text-sm text-neutral-500">
             Add, remove, and update your team.
           </p>
+        </div>
+        <div className="mt-6 flex max-w-lg flex-col">
+          {team && team.length > 0 ? (
+            <div className="flex flex-col gap-y-2">
+              {team.map((member) => (
+                <div className="flex items-center justify-between rounded-lg border border-neutral-200 bg-white px-3 py-2">
+                  <div className="flex items-center gap-x-3">
+                    <div className="inline-flex size-7 items-center justify-center rounded-full bg-neutral-500">
+                      <span className="text-xs font-medium text-white">
+                        {member.name
+                          .split(" ")
+                          .map((n) => n[0])
+                          .join("")}
+                      </span>
+                    </div>
+                    <div>{member.name}</div>
+                  </div>
+                  <div className="text-neutral-500">{member.email}</div>
+                </div>
+              ))}
+            </div>
+          ) : (
+            <div>
+              <p>No recent team members.</p>
+            </div>
+          )}
         </div>
       </div>
     </div>

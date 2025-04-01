@@ -1,8 +1,8 @@
 {
   "currentUser": {
     "id": "wehrujkfhjwre",
-    "name": "Zac Wojcik",
-    "email": "zac@wiards.io",
+    "name": "Charlie McAvoy",
+    "email": "charlie@wiards.io",
     "workspaces": [
       {
         "id": "iowerhfiorfuior",
@@ -28,7 +28,32 @@
       "scans": [],
       "findings": [],
       "training": [],
-      "team": [],
+      "team": [
+        {
+          "id": "kljdlkfjlskgjns",
+          "name": "Connor McDavid",
+          "email": "connor@wiards.io",
+          "role": "member"
+        },
+        {
+          "id": "choewcjkjkcvsdkm",
+          "name": "Nathan MacKinnon",
+          "email": "nathan@wiards.io",
+          "role": "member"
+        },
+        {
+          "id": "cjkbhwckhjswbjkl",
+          "name": "Jared McCann",
+          "email": "jared@wiards.io",
+          "role": "member"
+        },
+        {
+          "id": "wehrujkfhjwre",
+          "name": "Charlie McAvoy",
+          "email": "charlie@wiards.io",
+          "role": "admin"
+        }
+      ],
       "settings": {
         "billing": {
           "plan": "free",
