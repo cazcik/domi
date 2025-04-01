@@ -43,7 +43,16 @@ export function meta({}: Route.MetaArgs) {
 export default function Targets({ loaderData }: Route.ComponentProps) {
   return (
     <div>
-      <div className="p-7">Targets</div>
+      <div className="p-7">
+        <div>
+          <h1 className="pb-1 text-lg font-bold text-neutral-900 sm:pb-2 sm:text-xl">
+            Targets
+          </h1>
+          <p className="text-sm text-neutral-500">
+            Configure and manage all your targets.
+          </p>
+        </div>
+      </div>
     </div>
   );
 }

@@ -74,7 +74,7 @@ export default function ConsoleLayout({
               </PopoverButton>
               <PopoverPanel className="absolute right-0 mt-1 flex">
                 <div className="w-48 divide-y divide-neutral-200 rounded-lg border border-neutral-200 bg-white shadow-lg">
-                  <div className="flex flex-col rounded-t-lg px-3 py-2">
+                  <div className="flex flex-col rounded-t-lg px-3 py-2.5">
                     <span className="text-sm font-medium text-black">
                       {currentUser.name}
                     </span>
@@ -85,19 +85,19 @@ export default function ConsoleLayout({
                   <div className="flex flex-col">
                     <Link
                       to="#"
-                      className="px-3 py-2 text-sm text-neutral-500 hover:bg-neutral-50 hover:text-neutral-900"
+                      className="px-3 py-2.5 text-sm text-neutral-500 hover:bg-neutral-50 hover:text-neutral-900"
                     >
                       Profile
                     </Link>
                     <Link
                       to="#"
-                      className="px-3 py-2 text-sm text-neutral-500 hover:bg-neutral-50 hover:text-neutral-900"
+                      className="px-3 py-2.5 text-sm text-neutral-500 hover:bg-neutral-50 hover:text-neutral-900"
                     >
                       Settings
                     </Link>
                     <Link
                       to="#"
-                      className="px-3 py-2 text-sm text-neutral-500 hover:bg-neutral-50 hover:text-neutral-900"
+                      className="px-3 py-2.5 text-sm text-neutral-500 hover:bg-neutral-50 hover:text-neutral-900"
                     >
                       Workspaces
                     </Link>
@@ -105,15 +105,15 @@ export default function ConsoleLayout({
                   <div className="flex flex-col">
                     <Link
                       to="#"
-                      className="px-3 py-2 text-sm text-neutral-500 hover:bg-neutral-50 hover:text-neutral-900"
+                      className="px-3 py-2.5 text-sm text-neutral-500 hover:bg-neutral-50 hover:text-neutral-900"
                     >
-                      Create Workspace
+                      Create workspace
                     </Link>
                   </div>
                   <div className="flex flex-col">
                     <Link
                       to="#"
-                      className="rounded-b-lg px-3 py-2 text-sm text-neutral-500 hover:bg-neutral-50 hover:text-neutral-900"
+                      className="rounded-b-lg px-3 py-2.5 text-sm text-neutral-500 hover:bg-neutral-50 hover:text-neutral-900"
                     >
                       Sign out
                     </Link>
