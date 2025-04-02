@@ -171,7 +171,7 @@
             {
               "id": "hjkrhfjkrhfkjsf",
               "createdAt": "2025-02-01T12:00:00Z",
-              "amount": 299,
+              "amount": 89,
               "status": "Paid",
               "paymentMethod": {
                 "id": "owfhcvsljkhfvjkjlsn",
@@ -182,7 +182,7 @@
             {
               "id": "hjkrhfjkrhfkjsf",
               "createdAt": "2025-01-01T12:00:00Z",
-              "amount": 299,
+              "amount": 89,
               "status": "Paid",
               "paymentMethod": {
                 "id": "efrjkshkjsdrsk",
@@ -200,6 +200,12 @@
       "name": "Free",
       "slug": "free",
       "price": "0",
+      "term": "mo"
+    },
+    {
+      "name": "Start",
+      "slug": "start",
+      "price": "89",
       "term": "mo"
     },
     {

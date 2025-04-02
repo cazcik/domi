@@ -49,7 +49,7 @@ export default function Findings({ loaderData }: Route.ComponentProps) {
             Findings
           </h1>
           <p className="text-sm text-neutral-500">
-            Prioritize, triage, and track all your findings.
+            Prioritize, triage, and track your findings.
           </p>
         </div>
       </div>

@@ -95,19 +95,19 @@ export default function ConsoleLayout({
                   <div className="flex flex-col">
                     <Link
                       to="#"
-                      className="px-3 py-2.5 text-sm text-neutral-500 hover:bg-neutral-50 hover:text-neutral-900"
+                      className="px-3 py-2.5 text-sm text-neutral-500 hover:bg-neutral-100 hover:text-neutral-900"
                     >
                       Profile
                     </Link>
                     <Link
                       to="#"
-                      className="px-3 py-2.5 text-sm text-neutral-500 hover:bg-neutral-50 hover:text-neutral-900"
+                      className="px-3 py-2.5 text-sm text-neutral-500 hover:bg-neutral-100 hover:text-neutral-900"
                     >
                       Settings
                     </Link>
                     <button
                       onClick={() => setWorkspaceSwitcherIsOpen(true)}
-                      className="flex cursor-pointer px-3 py-2.5 text-sm text-neutral-500 hover:bg-neutral-50 hover:text-neutral-900"
+                      className="flex cursor-pointer px-3 py-2.5 text-sm text-neutral-500 hover:bg-neutral-100 hover:text-neutral-900"
                     >
                       Workspaces
                     </button>
@@ -115,7 +115,7 @@ export default function ConsoleLayout({
                   <div className="flex flex-col">
                     <Link
                       to="#"
-                      className="px-3 py-2.5 text-sm text-neutral-500 hover:bg-neutral-50 hover:text-neutral-900"
+                      className="px-3 py-2.5 text-sm text-neutral-500 hover:bg-neutral-100 hover:text-neutral-900"
                     >
                       Create workspace
                     </Link>
@@ -123,7 +123,7 @@ export default function ConsoleLayout({
                   <div className="flex flex-col">
                     <Link
                       to="#"
-                      className="rounded-b-lg px-3 py-2.5 text-sm text-neutral-500 hover:bg-neutral-50 hover:text-neutral-900"
+                      className="rounded-b-lg px-3 py-2.5 text-sm text-neutral-500 hover:bg-neutral-100 hover:text-neutral-900"
                     >
                       Sign out
                     </Link>

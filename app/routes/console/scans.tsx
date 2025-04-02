@@ -49,7 +49,7 @@ export default function Scans({ loaderData }: Route.ComponentProps) {
             Scans
           </h1>
           <p className="text-sm text-neutral-500">
-            Configure and schedule all your scans.
+            Configure, schedule, and tune your scans.
           </p>
         </div>
       </div>

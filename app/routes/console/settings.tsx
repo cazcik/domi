@@ -82,7 +82,7 @@ export default function Settings({ loaderData }: Route.ComponentProps) {
               name="name"
               autoComplete="off"
               defaultValue={workspace.name}
-              className="mt-1 w-full rounded-lg border border-neutral-200 bg-white px-3 py-2 text-neutral-900 outline-none focus:ring focus:ring-neutral-400"
+              className="mt-1 w-full rounded-lg border border-neutral-200 bg-white px-3 py-2 text-neutral-900 outline-none focus:border-black"
             />
           </div>
           <div className="pt-3">
@@ -96,7 +96,7 @@ export default function Settings({ loaderData }: Route.ComponentProps) {
               name="slug"
               autoComplete="off"
               defaultValue={workspace.slug}
-              className="mt-1 w-full rounded-lg border border-neutral-200 bg-white px-3 py-2 text-neutral-900 outline-none focus:ring focus:ring-neutral-400"
+              className="mt-1 w-full rounded-lg border border-neutral-200 bg-white px-3 py-2 text-neutral-900 outline-none focus:border-black"
             />
           </div>
           <div className="pt-3">
@@ -110,13 +110,13 @@ export default function Settings({ loaderData }: Route.ComponentProps) {
               name="billingEmail"
               autoComplete="off"
               defaultValue={workspace.billingEmail}
-              className="mt-1 w-full rounded-lg border border-neutral-200 bg-white px-3 py-2 text-neutral-900 outline-none focus:ring focus:ring-neutral-400"
+              className="mt-1 w-full rounded-lg border border-neutral-200 bg-white px-3 py-2 text-neutral-900 outline-none focus:border-black"
             />
           </div>
           <div className="pt-3">
             <button
               type="submit"
-              className="w-full rounded-lg border border-neutral-200 bg-neutral-800 px-3 py-1.5 text-neutral-100 outline-none placeholder:text-neutral-500 hover:bg-neutral-900 hover:text-white focus:ring focus:ring-neutral-400 sm:w-auto sm:px-6"
+              className="w-full rounded-lg border border-neutral-200 bg-neutral-800 px-3 py-1.5 text-neutral-100 outline-none placeholder:text-neutral-500 hover:bg-black hover:text-white focus:ring focus:ring-neutral-400 sm:w-auto sm:px-6"
             >
               Save
             </button>
@@ -187,7 +187,7 @@ export default function Settings({ loaderData }: Route.ComponentProps) {
                 <Field key={plan.slug} className="flex">
                   <Radio
                     value={plan}
-                    className="mt-3 w-full cursor-pointer rounded-lg border border-neutral-200 bg-white px-3 py-3 text-neutral-900 outline-none focus:ring focus:ring-neutral-400 data-[checked]:border-black"
+                    className="focus:borer-black mt-3 w-full cursor-pointer rounded-lg border border-neutral-200 bg-white px-3 py-3 text-neutral-900 outline-none data-[checked]:border-black"
                   >
                     <div className="flex items-center justify-between">
                       <div className="font-medium text-black">{plan.name}</div>
@@ -204,7 +204,7 @@ export default function Settings({ loaderData }: Route.ComponentProps) {
           <div className="pt-3">
             <button
               type="submit"
-              className="w-full rounded-lg border border-neutral-200 bg-neutral-800 px-3 py-1.5 text-neutral-100 outline-none placeholder:text-neutral-500 hover:bg-neutral-900 hover:text-white focus:ring focus:ring-neutral-400 sm:w-auto sm:px-6"
+              className="w-full rounded-lg border border-neutral-200 bg-neutral-800 px-3 py-1.5 text-neutral-100 outline-none placeholder:text-neutral-500 hover:bg-black hover:text-white focus:ring focus:ring-neutral-400 sm:w-auto sm:px-6"
             >
               Save
             </button>
@@ -224,7 +224,7 @@ export default function Settings({ loaderData }: Route.ComponentProps) {
                   <Field key={pay.id} className="flex">
                     <Radio
                       value={pay}
-                      className="mt-3 w-full cursor-pointer rounded-lg border border-neutral-200 bg-white px-3 py-3 text-neutral-900 outline-none focus:ring focus:ring-neutral-400 data-[checked]:border-black"
+                      className="mt-3 w-full cursor-pointer rounded-lg border border-neutral-200 bg-white px-3 py-3 text-neutral-900 outline-none focus:border-black data-[checked]:border-black"
                     >
                       <div className="flex items-center justify-between">
                         <div className="font-medium text-black">
@@ -243,7 +243,7 @@ export default function Settings({ loaderData }: Route.ComponentProps) {
           <div className="pt-3">
             <button
               type="submit"
-              className="w-full rounded-lg border border-neutral-200 bg-neutral-800 px-3 py-1.5 text-neutral-100 outline-none placeholder:text-neutral-500 hover:bg-neutral-900 hover:text-white focus:ring focus:ring-neutral-400 sm:w-auto sm:px-6"
+              className="w-full rounded-lg border border-neutral-200 bg-neutral-800 px-3 py-1.5 text-neutral-100 outline-none placeholder:text-neutral-500 hover:bg-black hover:text-white focus:ring focus:ring-neutral-400 sm:w-auto sm:px-6"
             >
               Save
             </button>

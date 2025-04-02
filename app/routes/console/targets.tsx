@@ -49,7 +49,7 @@ export default function Targets({ loaderData }: Route.ComponentProps) {
             Targets
           </h1>
           <p className="text-sm text-neutral-500">
-            Configure and manage all your targets.
+            Add, remove, and configure your targets.
           </p>
         </div>
       </div>

@@ -50,7 +50,7 @@ export default function Team({ loaderData }: Route.ComponentProps) {
             Team
           </h1>
           <p className="text-sm text-neutral-500">
-            Add, remove, and update your team.
+            Add, remove, and update your team members.
           </p>
         </div>
         <div className="mt-6 flex max-w-lg flex-col">
