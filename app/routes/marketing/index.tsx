@@ -1,11 +1,14 @@
+import { useState } from "react";
 import { Link } from "react-router";
 import type { Route } from "./+types/index";
+import { Dialog, DialogPanel, DialogBackdrop } from "@headlessui/react";
 
 export function meta({}: Route.MetaArgs) {
   return [{ title: "Domi: Secure your apps easily." }];
 }
 
 export default function Home() {
+  const [demoIsOpen, setDemoIsOpen] = useState(false);
   return (
     <div className="m-auto w-full">
       <div>
@@ -19,22 +22,52 @@ export default function Home() {
               security posture; without completely crushing your soul.
             </p>
           </div>
-          <div className="flex items-center justify-center gap-x-6 pt-10 sm:pt-12 md:gap-x-8 md:pt-14 lg:gap-x-10 lg:pt-16">
+          <div className="flex items-center justify-center gap-x-8 pt-10 sm:pt-12 md:pt-14 lg:gap-x-10 lg:pt-16">
             <Link
               to="/sign-up"
               className="text-sm text-neutral-600 hover:text-neutral-900 sm:text-base md:text-lg lg:text-xl"
             >
               Get started &rarr;
             </Link>
-            <Link
-              to="#"
-              className="text-sm text-neutral-600 hover:text-neutral-900 sm:text-base md:text-lg lg:text-xl"
+            <button
+              onClick={() => setDemoIsOpen(true)}
+              className="flex text-sm text-neutral-600 hover:text-neutral-900 sm:text-base md:text-lg lg:text-xl"
             >
               Watch demo
-            </Link>
+            </button>
           </div>
         </div>
       </div>
+      <Dialog
+        open={demoIsOpen}
+        onClose={() => setDemoIsOpen(false)}
+        className="relative z-50 focus:outline-none"
+      >
+        <DialogBackdrop
+          transition
+          className="fixed inset-0 bg-black/50 backdrop-blur-xs transition-opacity"
+        />
+        <div className="fixed inset-0 z-10 w-screen overflow-y-auto">
+          <div className="flex min-h-full items-center justify-center p-7 text-center">
+            <DialogPanel
+              transition
+              className="relative transform overflow-hidden rounded-lg bg-white px-7 py-7 text-left shadow-xl"
+            >
+              <div>
+                <iframe
+                  width="560"
+                  height="315"
+                  src="https://www.youtube.com/embed/dQw4w9WgXcQ?si=3PMhMRdOhFaOyyUg"
+                  title="YouTube video player"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  allowFullScreen
+                ></iframe>
+              </div>
+            </DialogPanel>
+          </div>
+        </div>
+      </Dialog>
     </div>
   );
 }
