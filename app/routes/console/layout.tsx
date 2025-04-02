@@ -1,14 +1,22 @@
+import { useState } from "react";
 import {
   RiBugLine,
   RiCrosshairLine,
   RiGraduationCapLine,
   RiGroupLine,
-  RiHome2Line,
+  RiHome5Line,
   RiScanLine,
-  RiSettings4Line,
+  RiSettings2Line,
 } from "@remixicon/react";
+import {
+  Popover,
+  PopoverButton,
+  PopoverPanel,
+  Dialog,
+  DialogPanel,
+  DialogBackdrop,
+} from "@headlessui/react";
 import { Link, Outlet, useLocation } from "react-router";
-import { Popover, PopoverButton, PopoverPanel } from "@headlessui/react";
 
 import NavLink from "./components/nav-link";
 import { currentUser } from "../../../data.json";
@@ -20,6 +28,8 @@ export default function ConsoleLayout({
 }) {
   const location = useLocation();
   const pathnames = location.pathname.split("/").filter((x) => x);
+
+  const [workspaceSwitcherIsOpen, setWorkspaceSwitcherIsOpen] = useState(false);
 
   return (
     <div className="flex min-h-dvh flex-col">
@@ -95,12 +105,12 @@ export default function ConsoleLayout({
                     >
                       Settings
                     </Link>
-                    <Link
-                      to="#"
-                      className="px-3 py-2.5 text-sm text-neutral-500 hover:bg-neutral-50 hover:text-neutral-900"
+                    <button
+                      onClick={() => setWorkspaceSwitcherIsOpen(true)}
+                      className="flex cursor-pointer px-3 py-2.5 text-sm text-neutral-500 hover:bg-neutral-50 hover:text-neutral-900"
                     >
                       Workspaces
-                    </Link>
+                    </button>
                   </div>
                   <div className="flex flex-col">
                     <Link
@@ -129,7 +139,7 @@ export default function ConsoleLayout({
           <nav className="mt-7 ml-5 flex flex-col gap-y-1 lg:ml-7">
             <NavLink href={`/${params.workspaceSlug}/home`}>
               <div>
-                <RiHome2Line className="size-4" />
+                <RiHome5Line className="size-4" />
               </div>
               <span>Home</span>
             </NavLink>
@@ -165,7 +175,7 @@ export default function ConsoleLayout({
             </NavLink>
             <NavLink href={`/${params.workspaceSlug}/settings`}>
               <div>
-                <RiSettings4Line className="size-4" />
+                <RiSettings2Line className="size-4" />
               </div>
               <span>Settings</span>
             </NavLink>
@@ -183,6 +193,64 @@ export default function ConsoleLayout({
           <Outlet />
         </main>
       </div>
+      <Dialog
+        open={workspaceSwitcherIsOpen}
+        onClose={() => setWorkspaceSwitcherIsOpen(false)}
+        className="relative z-50 focus:outline-none"
+      >
+        <DialogBackdrop
+          transition
+          className="fixed inset-0 bg-black/50 backdrop-blur-xs transition-opacity"
+        />
+        <div className="fixed inset-0 z-10 w-screen overflow-y-auto">
+          <div className="-mt-40 flex min-h-full items-center justify-center p-0 text-center">
+            <DialogPanel
+              transition
+              className="relative transform overflow-hidden rounded-lg bg-white px-7 pt-5 pb-7 text-left shadow-xl"
+            >
+              <div>
+                <h1 className="pb-1 text-lg font-bold text-neutral-900 sm:pb-2 sm:text-xl">
+                  Switch workspaces
+                </h1>
+                <p className="text-sm text-neutral-500">
+                  Select the workspace you'd like to switch too.
+                </p>
+              </div>
+              <div className="mt-6">
+                {currentUser.workspaces && currentUser.workspaces.length > 0 ? (
+                  <div>
+                    {currentUser.workspaces.map((workspace) => (
+                      <Link
+                        reloadDocument
+                        key={workspace.id}
+                        to={`/${workspace.slug}/${location.pathname.split("/").slice(2).join("/")}`}
+                        onClick={() => setWorkspaceSwitcherIsOpen(false)}
+                        className="mt-2 flex items-center rounded-lg border border-neutral-200 bg-white px-3 py-2.5 hover:border-black"
+                      >
+                        <div className="flex items-center gap-x-3">
+                          <div className="inline-flex size-7 items-center justify-center rounded-full bg-neutral-500">
+                            <span className="text-sm font-medium text-white">
+                              {workspace.name
+                                .split(" ")
+                                .map((n) => n[0])
+                                .join("")}
+                            </span>
+                          </div>
+                          <span className="font-medium text-neutral-900">
+                            {workspace.name}
+                          </span>
+                        </div>
+                      </Link>
+                    ))}
+                  </div>
+                ) : (
+                  <p>No workspaces found.</p>
+                )}
+              </div>
+            </DialogPanel>
+          </div>
+        </div>
+      </Dialog>
     </div>
   );
 }

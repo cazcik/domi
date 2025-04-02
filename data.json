@@ -55,6 +55,23 @@
         }
       ],
       "settings": {
+        "domains": [
+          {
+            "id": "ojrdjkcvbwscvb",
+            "domain": "wiards.io",
+            "verified": true
+          },
+          {
+            "id": "lchnwkdjcbhwck",
+            "domain": "wiards.dev",
+            "verified": true
+          },
+          {
+            "id": "lhacjbdsjckjkd",
+            "domain": "wiards.app",
+            "verified": false
+          }
+        ],
         "billing": {
           "plan": "free",
           "paymentMethods": [],
@@ -63,6 +80,7 @@
               "id": "jfhsdjkcnssds",
               "createdAt": "2025-04-01T12:00:00Z",
               "amount": 0,
+              "status": "Paid",
               "paymentMethod": {
                 "id": null,
                 "brand": null,
@@ -73,6 +91,7 @@
               "id": "jklsdhnfcjksnd",
               "createdAt": "2025-03-01T12:00:00Z",
               "amount": 0,
+              "status": "Paid",
               "paymentMethod": {
                 "id": null,
                 "brand": null,
@@ -92,8 +111,22 @@
       "scans": [],
       "findings": [],
       "training": [],
-      "team": [],
+      "team": [
+        {
+          "id": "wehrujkfhjwre",
+          "name": "Charlie McAvoy",
+          "email": "charlie@wiards.io",
+          "role": "admin"
+        }
+      ],
       "settings": {
+        "domains": [
+          {
+            "id": "ojrdjkcvbwscvb",
+            "domain": "usedomi.com",
+            "verified": true
+          }
+        ],
         "billing": {
           "plan": "pro",
           "paymentMethods": [
@@ -117,6 +150,7 @@
               "id": "sdjhncvksdjcvb",
               "createdAt": "2025-04-01T12:00:00Z",
               "amount": 299,
+              "status": "Pending",
               "paymentMethod": {
                 "id": "owfhcvsljkhfvjkjlsn",
                 "brand": "Visa",
@@ -127,6 +161,7 @@
               "id": "hjkrhfjkrhfkjsf",
               "createdAt": "2025-03-01T12:00:00Z",
               "amount": 299,
+              "status": "Paid",
               "paymentMethod": {
                 "id": "owfhcvsljkhfvjkjlsn",
                 "brand": "Visa",
@@ -137,6 +172,7 @@
               "id": "hjkrhfjkrhfkjsf",
               "createdAt": "2025-02-01T12:00:00Z",
               "amount": 299,
+              "status": "Paid",
               "paymentMethod": {
                 "id": "owfhcvsljkhfvjkjlsn",
                 "brand": "Visa",
@@ -147,6 +183,7 @@
               "id": "hjkrhfjkrhfkjsf",
               "createdAt": "2025-01-01T12:00:00Z",
               "amount": 299,
+              "status": "Paid",
               "paymentMethod": {
                 "id": "efrjkshkjsdrsk",
                 "brand": "Visa",

@@ -70,7 +70,7 @@ export default function Settings({ loaderData }: Route.ComponentProps) {
             Options and settings for the organization.
           </p>
         </div>
-        <form className="mt-6 flex max-w-sm flex-col">
+        <form className="mt-3 flex max-w-sm flex-col">
           <div>
             <label className="ml-0.5 text-sm text-neutral-700" htmlFor="name">
               Workspace Name
@@ -124,13 +124,60 @@ export default function Settings({ loaderData }: Route.ComponentProps) {
         </form>
         <div className="mt-10">
           <h1 className="pb-1 text-lg font-bold text-neutral-900 sm:pb-2 sm:text-xl">
+            Domains
+          </h1>
+          <p className="text-sm text-neutral-500">
+            Configure and verify your domains.
+          </p>
+        </div>
+        <form className="mt-3 flex max-w-sm flex-col">
+          <div>
+            {workspace.settings.domains &&
+            workspace.settings.domains.length > 0 ? (
+              <div className="flex flex-col gap-y-2">
+                {workspace.settings.domains.map((domain) => (
+                  <div
+                    key={domain.id}
+                    className="flex items-center justify-between rounded-lg border border-neutral-200 bg-white px-3 py-2.5"
+                  >
+                    <div className="flex items-center gap-x-2">
+                      <p className="text-black">{domain.domain}</p>
+                    </div>
+                    <div className="flex items-center gap-x-1">
+                      <p className="flex items-center">
+                        {domain.verified ? (
+                          <span className="rounded-lg border border-green-200 bg-green-50 px-2 py-1 text-xs text-green-800">
+                            Verified
+                          </span>
+                        ) : (
+                          <span className="rounded-lg border border-red-200 bg-red-50 px-2 py-1 text-xs text-red-800">
+                            Unverified
+                          </span>
+                        )}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+                <div className="w-full cursor-pointer rounded-lg border border-neutral-200 bg-white px-3 py-3 text-neutral-900 outline-none focus:ring focus:ring-neutral-400">
+                  <div className="font-medium text-black">Add new domain</div>
+                </div>
+              </div>
+            ) : (
+              <div className="w-full cursor-pointer rounded-lg border border-neutral-200 bg-white px-3 py-3 text-neutral-900 outline-none focus:ring focus:ring-neutral-400">
+                <div className="font-medium text-black">Add new domain</div>
+              </div>
+            )}
+          </div>
+        </form>
+        <div className="mt-10">
+          <h1 className="pb-1 text-lg font-bold text-neutral-900 sm:pb-2 sm:text-xl">
             Billing
           </h1>
           <p className="text-sm text-neutral-500">
             Configure your plan and payment methods.
           </p>
         </div>
-        <form className="mt-6 flex max-w-sm flex-col">
+        <form className="mt-3 flex max-w-sm flex-col">
           <div>
             <label className="ml-0.5 text-sm text-neutral-700">
               Current Plan
@@ -215,19 +262,43 @@ export default function Settings({ loaderData }: Route.ComponentProps) {
                     key={invoice.id}
                     className="flex items-center justify-between rounded-lg border border-neutral-200 bg-white px-3 py-2.5"
                   >
-                    <p>{new Date(invoice.createdAt).toLocaleDateString()}</p>
-                    <p>
-                      ${invoice.amount}{" "}
-                      <span className="text-green-600">(Paid)</span>
-                    </p>
-                    {invoice.paymentMethod &&
-                    invoice.paymentMethod.brand &&
-                    invoice.paymentMethod.last4 ? (
-                      <p>
-                        {invoice.paymentMethod.brand} (
-                        {invoice.paymentMethod.last4})
+                    <div className="flex items-center gap-x-2">
+                      <p className="text-black">
+                        {new Date(invoice.createdAt).toLocaleDateString()}
                       </p>
-                    ) : null}
+                    </div>
+                    <div className="flex items-center gap-x-1">
+                      <p className="flex items-center">
+                        <span className="rounded-lg border border-sky-200 bg-sky-50 px-2 py-1 text-xs text-sky-800">
+                          ${invoice.amount}
+                        </span>
+                      </p>
+                      <p className="flex items-center">
+                        {invoice.status === "Paid" ? (
+                          <span className="rounded-lg border border-green-200 bg-green-50 px-2 py-1 text-xs text-green-800">
+                            Paid
+                          </span>
+                        ) : invoice.status === "Pending" ? (
+                          <span className="rounded-lg border border-yellow-200 bg-yellow-50 px-2 py-1 text-xs text-yellow-800">
+                            Pending
+                          </span>
+                        ) : (
+                          <span className="rounded-lg border border-red-200 bg-red-50 px-2 py-1 text-xs text-red-800">
+                            Failed
+                          </span>
+                        )}
+                      </p>
+                      {invoice.paymentMethod &&
+                      invoice.paymentMethod.brand &&
+                      invoice.paymentMethod.last4 ? (
+                        <p className="flex items-center">
+                          <span className="rounded-lg border border-indigo-200 bg-indigo-50 px-2 py-1 text-xs text-indigo-800">
+                            {invoice.paymentMethod.brand} •{" "}
+                            {invoice.paymentMethod.last4}
+                          </span>
+                        </p>
+                      ) : null}
+                    </div>
                   </div>
                 ))}
               </div>

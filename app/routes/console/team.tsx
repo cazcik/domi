@@ -77,7 +77,7 @@ export default function Team({ loaderData }: Route.ComponentProps) {
             </div>
           ) : (
             <div>
-              <p>No recent team members.</p>
+              <p className="text-neutral-500">No recent team members.</p>
             </div>
           )}
         </div>
