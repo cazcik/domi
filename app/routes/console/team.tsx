@@ -57,7 +57,10 @@ export default function Team({ loaderData }: Route.ComponentProps) {
           {team && team.length > 0 ? (
             <div className="flex flex-col gap-y-2">
               {team.map((member) => (
-                <div className="flex items-center justify-between rounded-lg border border-neutral-200 bg-white px-3 py-2">
+                <div
+                  key={member.id}
+                  className="flex items-center rounded-lg border border-neutral-200 bg-white px-3 py-2"
+                >
                   <div className="flex items-center gap-x-3">
                     <div className="inline-flex size-7 items-center justify-center rounded-full bg-neutral-500">
                       <span className="text-xs font-medium text-white">
@@ -69,7 +72,6 @@ export default function Team({ loaderData }: Route.ComponentProps) {
                     </div>
                     <div>{member.name}</div>
                   </div>
-                  <div className="text-neutral-500">{member.email}</div>
                 </div>
               ))}
             </div>

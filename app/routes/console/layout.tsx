@@ -179,7 +179,7 @@ export default function ConsoleLayout({
             </div>
           </footer>
         </aside>
-        <main className="w-full min-w-0 pb-24">
+        <main className="w-full min-w-0 pb-32">
           <Outlet />
         </main>
       </div>
