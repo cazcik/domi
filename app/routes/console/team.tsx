@@ -54,32 +54,40 @@ export default function Team({ loaderData }: Route.ComponentProps) {
           </p>
         </div>
         <div className="mt-6 flex max-w-lg flex-col">
-          {team && team.length > 0 ? (
-            <div className="flex flex-col gap-y-2">
-              {team.map((member) => (
-                <div
-                  key={member.id}
-                  className="flex items-center rounded-lg border border-neutral-200 bg-white px-3 py-2"
-                >
-                  <div className="flex items-center gap-x-3">
-                    <div className="inline-flex size-7 items-center justify-center rounded-full bg-neutral-500">
-                      <span className="text-xs font-medium text-white">
-                        {member.name
-                          .split(" ")
-                          .map((n) => n[0])
-                          .join("")}
-                      </span>
+          <div className="flex items-center gap-x-2">
+            <button
+              type="button"
+              className="w-full rounded-lg border border-neutral-200 bg-neutral-800 px-3 py-1.5 text-neutral-100 outline-none placeholder:text-neutral-500 hover:bg-black hover:text-white focus:ring focus:ring-neutral-400 sm:w-auto sm:px-6"
+            >
+              Add team member
+            </button>
+          </div>
+          <div className="mt-3">
+            {team && team.length > 0 ? (
+              <div className="flex flex-col gap-y-2">
+                {team.map((member) => (
+                  <div
+                    key={member.id}
+                    className="flex items-center rounded-lg border border-neutral-200 bg-white px-3 py-2"
+                  >
+                    <div className="flex items-center gap-x-3">
+                      <div className="inline-flex size-7 items-center justify-center rounded-full bg-neutral-500">
+                        <span className="text-xs font-medium text-white">
+                          {member.name
+                            .split(" ")
+                            .map((n) => n[0])
+                            .join("")}
+                        </span>
+                      </div>
+                      <div>{member.name}</div>
                     </div>
-                    <div>{member.name}</div>
                   </div>
-                </div>
-              ))}
-            </div>
-          ) : (
-            <div>
+                ))}
+              </div>
+            ) : (
               <p className="text-neutral-500">No recent team members.</p>
-            </div>
-          )}
+            )}
+          </div>
         </div>
       </div>
     </div>
