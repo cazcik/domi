@@ -2,7 +2,11 @@
   "currentUser": {
     "id": "wehrujkfhjwre",
     "name": "Charlie McAvoy",
-    "email": "charlie@wiards.io",
+    "email": "charlie@usedomi.com",
+    "lastWorkspace": {
+      "name": "Domi",
+      "slug": "domi"
+    },
     "workspaces": [
       {
         "id": "iowerhfiorfuior",
@@ -23,7 +27,7 @@
       "id": "iowerhfiorfuior",
       "slug": "wiards",
       "name": "Wiards",
-      "billingEmail": "billing@wiards.io",
+      "billingEmail": "billing@usedomi.com",
       "targets": [],
       "scans": [],
       "findings": [],
@@ -48,25 +52,25 @@
         {
           "id": "kljdlkfjlskgjns",
           "name": "Connor McDavid",
-          "email": "connor@wiards.io",
+          "email": "connor@usedomi.com",
           "role": "member"
         },
         {
           "id": "choewcjkjkcvsdkm",
           "name": "Nathan MacKinnon",
-          "email": "nathan@wiards.io",
+          "email": "nathan@usedomi.com",
           "role": "member"
         },
         {
           "id": "cjkbhwckhjswbjkl",
           "name": "Jared McCann",
-          "email": "jared@wiards.io",
+          "email": "jared@usedomi.com",
           "role": "member"
         },
         {
           "id": "wehrujkfhjwre",
           "name": "Charlie McAvoy",
-          "email": "charlie@wiards.io",
+          "email": "charlie@usedomi.com",
           "role": "admin"
         }
       ],
@@ -75,17 +79,20 @@
           {
             "id": "ojrdjkcvbwscvb",
             "domain": "wiards.io",
-            "verified": true
+            "verified": true,
+            "verificationCode": "swhjikgvfhjksbkbn"
           },
           {
             "id": "lchnwkdjcbhwck",
             "domain": "wiards.dev",
-            "verified": true
+            "verified": true,
+            "verificationCode": "wejifhjksdhfnmdnsw"
           },
           {
             "id": "lhacjbdsjckjkd",
             "domain": "wiards.app",
-            "verified": false
+            "verified": false,
+            "verificationCode": "kjweiorfjgiopksmq"
           }
         ],
         "billing": {
@@ -147,55 +154,55 @@
         {
           "id": "wehrujkfhjwre",
           "name": "Charlie McAvoy",
-          "email": "charlie@wiards.io",
+          "email": "charlie@usedomi.com",
           "role": "admin"
         },
         {
           "id": "jkbnsdvkjsdcs",
           "name": "Connor Hellebuyck",
-          "email": "connor@wiards.io",
+          "email": "connor@usedomi.com",
           "role": "admin"
         },
         {
           "id": "cjksdbcksjdbcj",
           "name": "Andrei Vasilevskiy",
-          "email": "andrei@wiards.io",
+          "email": "andrei@usedomi.com",
           "role": "admin"
         },
         {
           "id": "cvjksdbcjhsdbh",
           "name": "Jake Oettinger",
-          "email": "jake@wiards.io",
+          "email": "jake@usedomi.com",
           "role": "admin"
         },
         {
           "id": "vwchuiobfhjksbdd",
           "name": "Logan Thompson",
-          "email": "logan@wiards.io",
+          "email": "logan@usedomi.com",
           "role": "admin"
         },
         {
           "id": "sdhjkvcdhjsbnddc",
           "name": "Sergei Bobrovsky",
-          "email": "sergei@wiards.io",
+          "email": "sergei@usedomi.com",
           "role": "admin"
         },
         {
           "id": "cvsdvdfvbfdgvdfv",
           "name": "Filip Gustavsson",
-          "email": "filip@wiards.io",
+          "email": "filip@usedomi.com",
           "role": "admin"
         },
         {
           "id": "gerthyrgbevd",
           "name": "Adin Hill",
-          "email": "adin@wiards.io",
+          "email": "adin@usedomi.com",
           "role": "admin"
         },
         {
           "id": "ynetnsdfgsgfdsgf",
           "name": "Ilya Sorokin",
-          "email": "ilya@wiards.io",
+          "email": "ilya@usedomi.com",
           "role": "admin"
         }
       ],
@@ -204,7 +211,8 @@
           {
             "id": "ojrdjkcvbwscvb",
             "domain": "usedomi.com",
-            "verified": true
+            "verified": true,
+            "verificationCode": "wuiehceiwduhjwbk"
           }
         ],
         "billing": {

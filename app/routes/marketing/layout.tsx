@@ -1,5 +1,7 @@
 import { Link, Outlet } from "react-router";
 
+import { currentUser } from "../../../data.json";
+
 export default function MarketingLayout() {
   return (
     <div className="flex min-h-dvh flex-col">
@@ -20,20 +22,31 @@ export default function MarketingLayout() {
             </Link> */}
           </nav>
         </div>
-        <div className="flex items-center gap-x-5 sm:gap-x-6 md:gap-x-7">
-          <Link
-            to="/sign-in"
-            className="text-sm text-neutral-500 hover:text-neutral-900 md:text-xs lg:text-sm"
-          >
-            Sign in
-          </Link>
-          <Link
-            to="/sign-up"
-            className="text-sm text-neutral-500 hover:text-neutral-900 md:text-xs lg:text-sm"
-          >
-            Sign up
-          </Link>
-        </div>
+        {currentUser ? (
+          <div>
+            <Link
+              to={`/${currentUser.lastWorkspace.slug}`}
+              className="text-sm text-neutral-500 hover:text-neutral-900 md:text-xs lg:text-sm"
+            >
+              {currentUser.lastWorkspace.name} &rarr;
+            </Link>
+          </div>
+        ) : (
+          <div className="flex items-center gap-x-5 sm:gap-x-6 md:gap-x-7">
+            <Link
+              to="/sign-in"
+              className="text-sm text-neutral-500 hover:text-neutral-900 md:text-xs lg:text-sm"
+            >
+              Sign in
+            </Link>
+            <Link
+              to="/sign-up"
+              className="text-sm text-neutral-500 hover:text-neutral-900 md:text-xs lg:text-sm"
+            >
+              Sign up
+            </Link>
+          </div>
+        )}
       </header>
       <main className="flex w-full grow">
         <Outlet />
