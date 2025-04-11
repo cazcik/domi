@@ -21,7 +21,7 @@
     "@cloudflare/workers-types": "^4.20250410.0",
     "@react-router/dev": "^7.5.0",
     "@tailwindcss/vite": "^4.0.0",
-    "@types/node": "^22.14.1",
+    "@types/node": "^20",
     "@types/react": "^19.0.1",
     "@types/react-dom": "^19.0.1",
     "prettier": "^3.5.3",
@@ -36,9 +36,5 @@
     "plugins": [
       "prettier-plugin-tailwindcss"
     ]
-  },
-  "packageManager": "pnpm@10.8.0",
-  "engines": {
-    "node": ">=20.0.0"
   }
 }
