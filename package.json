@@ -5,12 +5,7 @@
   "workspaces": [
     "packages/*"
   ],
-  "scripts": {
-    "build:www": "pnpm run build --filter www",
-    "build:app": "pnpm run build --filter app",
-    "deploy:www": "pnpm run deploy --filter www",
-    "deploy:app": "pnpm run deploy --filter app"
-  },
+  "scripts": {},
   "devDependencies": {
     "@tsconfig/node22": "^22.0.1",
     "typescript": "^5.8.3",
