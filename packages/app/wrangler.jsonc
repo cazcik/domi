@@ -1,0 +1,19 @@
+/**
+ * For more details on how to configure Wrangler, refer to:
+ * https://developers.cloudflare.com/workers/wrangler/configuration/
+ */
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "app-usedomi-com",
+  "compatibility_date": "2025-04-04",
+  "main": "./workers/app.ts",
+  "observability": {
+    "enabled": true
+  },
+  "routes": [
+    {
+      "custom_domain": true,
+      "pattern": "app.usedomi.com"
+    }
+  ]
+}
