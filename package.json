@@ -6,8 +6,8 @@
     "packages/*"
   ],
   "scripts": {
-    "deploy:www": "cd packages/www && pnpm run build && pnpm run deploy",
-    "deploy:app": "cd packages/app && pnpm run build && pnpm run deploy"
+    "deploy:www": "cd packages/www && pnpm run deploy",
+    "deploy:app": "cd packages/app && pnpm run deploy"
   },
   "devDependencies": {
     "@tsconfig/node22": "^22.0.1",
