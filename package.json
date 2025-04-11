@@ -5,7 +5,10 @@
   "workspaces": [
     "packages/*"
   ],
-  "scripts": {},
+  "scripts": {
+    "deploy:www": "cd packages/www && pnpm run build && pnpm run deploy",
+    "deploy:app": "cd packages/app && pnpm run build && pnpm run deploy"
+  },
   "devDependencies": {
     "@tsconfig/node22": "^22.0.1",
     "typescript": "^5.8.3",
