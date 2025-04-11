@@ -1,0 +1,21 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Source Sans 3";
+  font-weight: 100 900;
+  font-style: normal;
+  display: swap;
+  src: url("/fonts/source-sans-3vf-upright.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Source Sans 3";
+  font-weight: 100 900;
+  font-style: italic;
+  display: swap;
+  src: url("/fonts/source-sans-3vf-italic.woff2") format("woff2");
+}
+
+@theme {
+  --default-font-family: "Source Sans 3";
+}
