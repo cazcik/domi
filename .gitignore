@@ -1,0 +1,15 @@
+# node
+node_modules
+
+# secrets
+.env*
+!.env.example
+
+# build
+dist
+build
+out
+
+# misc
+.DS_Store
+.vscode

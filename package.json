@@ -1,0 +1,19 @@
+{
+  "name": "domi",
+  "type": "module",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {},
+  "devDependencies": {
+    "@tsconfig/node22": "^22.0.1",
+    "typescript": "^5.8.3",
+    "wrangler": "^4.9.1"
+  },
+  "packageManager": "pnpm@10.8.0",
+  "engines": {
+    "node": ">=22.0.0"
+  }
+}
