@@ -1,39 +1,39 @@
-name: deploy app
+# name: deploy app
 
-on:
-  push:
-    paths:
-      - packages/app/**
-      - .github/workflows/app.yaml
-  workflow_dispatch:
-    inputs:
-      summary:
-        description: reason for deployment
-        required: true
+# on:
+#   push:
+#     paths:
+#       - packages/app/**
+#       - .github/workflows/app.yaml
+#   workflow_dispatch:
+#     inputs:
+#       summary:
+#         description: reason for deployment
+#         required: true
 
-jobs:
-  deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - name: checkout
-        uses: actions/checkout@v4
-      - name: setup pnpm
-        uses: pnpm/action-setup@v4
-        with:
-          run_install: false
-      - name: setup node
-        uses: actions/setup-node@v3
-        with:
-          node-version: 22
-          cache: pnpm
-      - name: install dependencies
-        run: pnpm install --frozen-lockfile
-      - name: build app
-        run: cd packages/app && pnpm build
-      - name: deploy app
-        uses: cloudflare/wrangler-action@v3
-        with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          packageManager: pnpm
-          workingDirectory: packages/app
+# jobs:
+#   deploy:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: checkout
+#         uses: actions/checkout@v4
+#       - name: setup pnpm
+#         uses: pnpm/action-setup@v4
+#         with:
+#           run_install: false
+#       - name: setup node
+#         uses: actions/setup-node@v3
+#         with:
+#           node-version: 22
+#           cache: pnpm
+#       - name: install dependencies
+#         run: pnpm install --frozen-lockfile
+#       - name: build app
+#         run: cd packages/app && pnpm build
+#       - name: deploy app
+#         uses: cloudflare/wrangler-action@v3
+#         with:
+#           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+#           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+#           packageManager: pnpm
+#           workingDirectory: packages/app
