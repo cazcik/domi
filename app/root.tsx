@@ -12,9 +12,7 @@ import type { Route } from "./+types/root";
 import "./root.css";
 
 export const links: Route.LinksFunction = () => [
-  { rel: "icon", href: "/favicon.svg", type: "image/svg+xml" },
-  { rel: "icon", href: "/favicon.png", type: "image/png" },
-  { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+  { rel: "icon", href: "https://fav.farm/🏠" },
 ];
 
 export function Layout({ children }: { children: React.ReactNode }) {
