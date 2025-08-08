@@ -1,0 +1,20 @@
+services:
+  proxy:
+    image: cazcik/domi-proxy:latest
+    restart: unless-stopped
+    volumes:
+      - ./logs/nginx:/var/log/nginx
+
+  web:
+    image: cazcik/domi-web:latest
+    restart: unless-stopped
+    environment:
+      - NODE_ENV=production
+
+  api:
+    image: cazcik/domi-api:latest
+    restart: unless-stopped
+    environment:
+      - NODE_ENV=production
+    volumes:
+      - ./logs/api:/app/logs
