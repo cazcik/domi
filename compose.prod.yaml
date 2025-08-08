@@ -1,22 +1,51 @@
 services:
   proxy:
-    image: cazcik/domi-proxy:latest
-    restart: unless-stopped
+    build: .
     ports:
-      - 80:8080
+      - "80:80"
+      - "443:443"
+    depends_on:
+      - web
+      - api
     volumes:
-      - ./logs/nginx:/var/log/nginx
+      - ./nginx.prod.conf:/etc/nginx/conf.d/default.conf
+      - ./certbot/conf:/etc/letsencrypt
+      - ./certbot/www:/var/www/certbot
+    networks:
+      - app-network
+    restart: unless-stopped
+    command: "/bin/sh -c 'while :; do sleep 6h & wait $${!}; nginx -s reload; done & nginx -g \"daemon off;\"'"
+
+  certbot:
+    image: certbot/certbot:latest
+    volumes:
+      - ./certbot/conf:/etc/letsencrypt
+      - ./certbot/www:/var/www/certbot
+      - /var/run/docker.sock:/var/run/docker.sock
+    networks:
+      - app-network
+    depends_on:
+      - proxy
+    restart: unless-stopped
+    command: >
+      sh -c "
+        apk add --no-cache dcron &&
+        echo '0 12 * * 0 /usr/local/bin/certbot renew --quiet --deploy-hook \"docker exec domi-proxy-1 nginx -s reload\"' > /etc/crontabs/root &&
+        crond -f -d 8
+      "
 
   web:
-    image: cazcik/domi-web:latest
+    build: ./packages/web
+    networks:
+      - app-network
     restart: unless-stopped
-    environment:
-      - NODE_ENV=production
 
   api:
-    image: cazcik/domi-api:latest
+    build: ./packages/api
+    networks:
+      - app-network
     restart: unless-stopped
-    environment:
-      - NODE_ENV=production
-    volumes:
-      - ./logs/api:/app/logs
+
+networks:
+  app-network:
+    driver: bridge
