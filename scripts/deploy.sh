@@ -180,16 +180,36 @@ check_project_directory() {
     
     if ssh -i "$KEY" "$USER@$HOST" "[ -d \"$PROJECT_DIR\" ]" > /dev/null 2>&1; then
         print_success "project directory exists: $PROJECT_DIR"
+        
+        # Check if it's a git repository and update if needed
+        if ssh -i "$KEY" "$USER@$HOST" "[ -d \"$PROJECT_DIR/.git\" ]" > /dev/null 2>&1; then
+            print_status "updating existing repository..."
+            if ssh -i "$KEY" "$USER@$HOST" "cd $PROJECT_DIR && git pull origin main" > /dev/null 2>&1; then
+                print_success "repository updated successfully"
+            else
+                print_warning "failed to update repository, continuing with existing version"
+            fi
+        fi
     else
-        print_error "project directory not found: $PROJECT_DIR"
-        print_error "please ensure the project is properly set up on the VPS"
-        exit 1
+        print_status "project directory not found, cloning repository..."
+        
+        # Create parent directory if it doesn't exist
+        ssh -i "$KEY" "$USER@$HOST" "mkdir -p $(dirname $PROJECT_DIR)"
+        
+        # Clone the repository
+        if ssh -i "$KEY" "$USER@$HOST" "git clone https://github.com/cazcik/domi.git $PROJECT_DIR" > /dev/null 2>&1; then
+            print_success "repository cloned successfully to $PROJECT_DIR"
+        else
+            print_error "failed to clone repository"
+            exit 1
+        fi
     fi
     
     if ssh -i "$KEY" "$USER@$HOST" "[ -f \"$PROJECT_DIR/$COMPOSE_FILE\" ]" > /dev/null 2>&1; then
         print_success "compose file found: $COMPOSE_FILE"
     else
         print_error "compose file not found: $PROJECT_DIR/$COMPOSE_FILE"
+        print_error "repository structure may be incorrect"
         exit 1
     fi
 }
@@ -198,7 +218,7 @@ pull_images() {
     local service_name=$1
     local image_name="cazcik/${PROJECT_NAME}-${service_name}:${TAG}"
     
-    print_status "pulling $image_name on VPS..."
+    print_status "pulling $image_name on vps..."
     
     if ssh -i "$KEY" "$USER@$HOST" "cd $PROJECT_DIR && docker pull $image_name" > /dev/null 2>&1; then
         print_success "$image_name pulled successfully"
@@ -225,8 +245,8 @@ deploy_service() {
     
     print_status "deploying $service_name service..."
     
-    # Deploy the specific service with zero-downtime
-    if ssh -i "$KEY" "$USER@$HOST" "cd $PROJECT_DIR && docker compose -f $COMPOSE_FILE up -d --no-deps $service_name" > /dev/null 2>&1; then
+    # Deploy the specific service with force recreation to ensure proper port mapping
+    if ssh -i "$KEY" "$USER@$HOST" "cd $PROJECT_DIR && docker compose -f $COMPOSE_FILE up -d --force-recreate --no-deps $service_name" > /dev/null 2>&1; then
         print_success "$service_name service deployed successfully"
     else
         print_error "failed to deploy $service_name service"
